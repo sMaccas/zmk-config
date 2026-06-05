@@ -64,41 +64,41 @@
   continue-list = <UNDERSCORE MINUS BSPC>;
 };
 
-    // // // // // // // // // // // // // // // // // // // // // // // // // // // //
-  // About layer-keys layout                                                       //
-  // -----------------------                                                       //
-  // Due to the different sizes of keyboards I want to support in this             //
-  // configuration, there are certain keys that I need to place in one of two      //
-  // possible positions. This means that the keyboard X, these keys need to be     //
-  // placed on position A, but for keyboard Y, these keys should be place on       //
-  // position B.                                                                   //
-  //                                                                               //
-  // The problem for the layout is how to make a key definition be one of two      //
-  // values based on a configuration.                                              //
-  //                                                                               //
-  // The solution I found was to create optional "feature-flags" (which are        //
-  // simple define macros with no value) that each keyboard `.keymap` file may     //
-  // define to indicate the want the specion positioning for the keys.             //
-  //                                                                               //
-  // Then, we would define a macro value for each key position we're interested,   //
-  // and set their values according to the existance of these "feature-flags"      //
-  // macros.                                                                       //
-  //                                                                               //
-  // The macro names I'll use have a specific syntax that would make them easy to  //
-  // identify among all other keys:                                                //
-  //                                                                               //
-  //     P_<OVERAL_POSITION>_<LAYER_ABBREVIATION>[_<ORDER_INDICATION>]             //
-  //                                                                               //
-  // The `OVERAL_POSITION` follows the syntax for the key position used on the     //                                                        //
-  // `keypos_def` files, but also allows the use of the `S` side, that represents  //
-  // a symetric position on the left and right sides; the `LAYER_ABBREVIATION`     //
-  // uses the same names I use on the layer number definition; finally, the        //
-  // `ORDER_INDICATION`, which is an optional part that represets... well...the    //
-  // order that the key is located in the row specified by the `OVERAL_POSITION`   //
-  // part. The order of the key can be anything that makes clear what is the key   //
-  // position, but for a key with just two possible positions on the same row, is  //
-  // common to use `O` for "outter", and `I` for inner, indicating that the key is //
-  // located closer to the outter side of a keyboard half, or its inner side.      //
+// // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// About layer-keys layout                                                       //
+// -----------------------                                                       //
+// Due to the different sizes of keyboards I want to support in this             //
+// configuration, there are certain keys that I need to place in one of two      //
+// possible positions. This means that the keyboard X, these keys need to be     //
+// placed on position A, but for keyboard Y, these keys should be place on       //
+// position B.                                                                   //
+//                                                                               //
+// The problem for the layout is how to make a key definition be one of two      //
+// values based on a configuration.                                              //
+//                                                                               //
+// The solution I found was to create optional "feature-flags" (which are        //
+// simple define macros with no value) that each keyboard `.keymap` file may     //
+// define to indicate the want the specion positioning for the keys.             //
+//                                                                               //
+// Then, we would define a macro value for each key position we're interested,   //
+// and set their values according to the existance of these "feature-flags"      //
+// macros.                                                                       //
+//                                                                               //
+// The macro names I'll use have a specific syntax that would make them easy to  //
+// identify among all other keys:                                                //
+//                                                                               //
+//     P_<OVERAL_POSITION>_<LAYER_ABBREVIATION>[_<ORDER_INDICATION>]             //
+//                                                                               //
+// The `OVERAL_POSITION` follows the syntax for the key position used on the     //
+// `keypos_def` files, but also allows the use of the `S` side, that represents  //
+// a symetric position on the left and right sides; the `LAYER_ABBREVIATION`     //
+// uses the same names I use on the layer number definition; finally, the        //
+// `ORDER_INDICATION`, which is an optional part that represets... well...the    //
+// order that the key is located in the row specified by the `OVERAL_POSITION`   //
+// part. The order of the key can be anything that makes clear what is the key   //
+// position, but for a key with just two possible positions on the same row, is  //
+// common to use `O` for "outter", and `I` for inner, indicating that the key is //
+// located closer to the outter side of a keyboard half, or its inner side.      //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
 // Definition of macros representing all alternatives positions for the
