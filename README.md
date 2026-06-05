@@ -24,7 +24,8 @@ Currently, in this repository, I have layout for:
 
 - [Corne (6 columns)](docs/corne.md)
 - [Rolio46.2](docs/rolio.md)
-- [Lily58](docs/lily58.md)
+- [Lily58](docs/lily58.md) — _unowned by the maintainer; config is unverified
+  and excluded from CI builds_
 
 If you did not click on any of the layout links yet, there is some general
 information I would like you to have to help you understand them better.

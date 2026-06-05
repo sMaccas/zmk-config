@@ -2,6 +2,12 @@
 
 <div align="center"><img src="images/lily58-keyboard.webp"></div>
 
+> [!WARNING]
+> I do not own a Lily58, so this configuration is **unverified** — the build
+> is excluded from CI and the keymap may be incorrect. The files are kept
+> here only because the master layout is shared with the boards I actually
+> use. Flash at your own risk.
+
 This Lily58 keyboard layout is a mashup of several excellent layouts I found
 online, with a heavy seasoning of my imagination. So yes, you probably already
 saw some (if not most) of the things I put in this layout somewhere else.
