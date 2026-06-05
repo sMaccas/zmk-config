@@ -43,6 +43,24 @@ Some notable features are:
 - **Timeless homerow mods**: Homerow mod configuration based on [Robert U
   (@urob)'s ZMK configuration](https://github.com/urob/zmk-config);
 
+> [!NOTE]
+> The layer-map images below were generated from an earlier revision of the
+> keymap and have not been re-rendered yet. The prose in each section
+> describes the **current** behavior. Notable deltas vs. the maps:
+>
+> - **Base layers (QWERTY & COLEMAK)**: the leftmost column has `` ` ``
+>   (Grave) on the top alpha row and `⇥` (Tab) on the homerow row — the
+>   maps show them swapped.
+> - **Homerow mods**: from pinky to index, both hands hold `⌘ ⌥ ^ ⇧`
+>   (Gui, Alt, Ctrl, Shift). The maps show an older `^ ⌥ ⌘ ⇧`
+>   (Ctrl, Alt, Gui, Shift) order.
+> - **Numbers layer**: `⏎` is on the leftmost top-row key with `⇥` one
+>   row below it — swapped from what the map shows.
+> - **Navigation and Mouse layers**: every right-hand binding is one slot
+>   closer to the inner column than the map indicates (the leading empty
+>   slots in the maps no longer exist).
+> - **`G + H` combo** triggers `CAPS_LOCK` — not drawn on layer maps.
+
 ## Base Layer
 
 ![Default base layer layout](./images/rolio46-layer0-main.svg)
@@ -69,16 +87,30 @@ The modifications I did to his configuration are basically 3:
 3. Defined a special homerow modifier to use with momentary layers (`&lt`). It
    uses the same configuration as the _“Shift”_ modifier;
 
+The current modifier order on the homerow, from pinky to index, is the same
+on both hands:
+
+| Finger | Mod  |
+| ------ | ---- |
+| Pinky  | `⌘`  Command (Gui) |
+| Ring   | `⌥`  Option (Alt) |
+| Middle | `^`  Control |
+| Index  | `⇧`  Shift |
+
 The result I get from it is “mostly” good. I'm still seeing some mistypes, but
 I feel this is more because I don't press the key all the way through with the
 switches I'm using, then problems with the setup itself.
 
-### CAPS_WORD
+### CAPS_WORD and CAPS_LOCK
 
-As I mentioned in the main [README file](/#caps-lock) in this repository, I hate
-`CAPS_LOCK`, but truly like the `CAPS_WORD` functionality in ZMK. In the Base
-layer, you toggle `CAPS_WORD` by double-tapping one of the _“Globe”_ keys on
-either side of the keyboard.
+Two related behaviors live on combos in the base layers (see the main
+[README](/#caps-lock--caps-word)):
+
+- **`CAPS_WORD`** — pressing both _Shift_ keys together. Capitalizes the
+  next word only, then drops back to normal typing.
+- **`CAPS_LOCK`** — pressing `G + H` together. Sends the real `CAPS_LOCK`
+  HID toggle. macOS can be configured to route this to switch between
+  input languages (e.g. PL ↔ EN) instead of toggling the caps light.
 
 ### Autoshift
 
