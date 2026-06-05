@@ -209,19 +209,21 @@ ZMK has partial support for the _Globe_ key (check issue
 [#937](https://github.com/zmkfirmware/zmk/issues/947) for details on the mater),
 it can only be used as a _“holding”_ key.
 
-## Caps Lock
+## Caps Lock & Caps Word
 
-I think `CAPS_LOCK` is evil. No keyboard should ever have that key available.
-That being said, I admit that sometime is very convenient to type a fully
-capitalized word without having to hold down the _Shift_ key.
+The layout exposes two related behaviors on combos rather than dedicated keys:
 
-Fortunately, ZMK solved this by allowing us to use the
-[`CAPS_WORD`](https://zmk.dev/docs/behaviors/caps-word) behavior, where, when
-tapped, it will turn on the `CAPS_LOCK` just to the next word typed. Thereafter,
-the keyboard will put you on a normal typing mode again.
+- **`CAPS_WORD`** — pressing both _Shift_ keys together. ZMK's
+  [`CAPS_WORD`](https://zmk.dev/docs/behaviors/caps-word) capitalizes only the
+  next word typed and then automatically returns to normal typing — useful for
+  the occasional fully-capitalized word without holding _Shift_.
 
-In this layout configuration, the `CAPS_WORD` feature is triggered when I press
-both _“Shift”_ keys together.
+- **`CAPS_LOCK`** — pressing `G` + `H` together. This sends the real
+  `CAPS_LOCK` HID keycode. macOS can be configured under
+  _System Settings → Keyboard → Input Sources → Use Caps Lock to switch
+  between input sources_ to route this toggle to switch between input
+  languages (e.g. PL ↔ EN) instead of flipping the caps light, which is why
+  it's kept available even though it's a rarely-needed key otherwise.
 
 ## My methodology
 
