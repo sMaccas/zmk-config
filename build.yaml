@@ -14,20 +14,20 @@
 ---
 include:
   # Corne-42 OLED Firmeare
-  - keyboard: Corne 42 OLED
-    board: nice_nano_v2
-    shield: corne_left
-    cmake-args: -DEXTRA_CONF_FILE=../../config/corne_oled.conf
-    artifact-name: zmk-corne-42-oled-left
-  - keyboard: Corne 42 OLED
-    board: nice_nano_v2
-    shield: corne_right
-    cmake-args: -DEXTRA_CONF_FILE=../../config/corne_oled.conf
-    artifact-name: zmk-corne-42-oled-right
-  - keyboard: Corne 42 OLED
-    board: nice_nano_v2
-    shield: settings_reset
-    artifact-name: zmk-corne-42-oled-settings-reset
+  # - keyboard: Corne 42 OLED
+  #   board: nice_nano_v2
+  #   shield: corne_left
+  #   cmake-args: -DEXTRA_CONF_FILE=../../config/corne_oled.conf
+  #   artifact-name: zmk-corne-42-oled-left
+  # - keyboard: Corne 42 OLED
+  #   board: nice_nano_v2
+  #   shield: corne_right
+  #   cmake-args: -DEXTRA_CONF_FILE=../../config/corne_oled.conf
+  #   artifact-name: zmk-corne-42-oled-right
+  # - keyboard: Corne 42 OLED
+  #   board: nice_nano_v2
+  #   shield: settings_reset
+  #   artifact-name: zmk-corne-42-oled-settings-reset
 
   # Corne-42 nice!view Firmeare
   - keyboard: Corne 42 nice!view
