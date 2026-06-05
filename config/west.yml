@@ -40,7 +40,7 @@ manifest:
       import: app/west.yml
     - name: zmk-tri-state
       remote: dhruvinsh
-      revision: main
+      revision: ccca8fbe6bfb1efc30d0374029de3e7d0425fe76
       clone-depth: 1
     - name: zmk-rolio-shield
       remote: rolio
