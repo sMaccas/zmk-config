@@ -388,6 +388,13 @@
             layers = <L_QWT L_CMK>;
             bindings = <&caps_word>;
         };
+
+        combo_caps_lock {
+            timeout-ms = <75>;
+            key-positions = COMBO_KEY_CAPS_LOCK;
+            layers = <L_QWT L_CMK>;
+            bindings = <&kp CAPS>;
+        };
     };
 };
 
