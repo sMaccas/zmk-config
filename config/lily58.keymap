@@ -32,6 +32,7 @@
                      k40 k41 k43 k44    k47 k48 k4A k4B
 
 #define COMBO_KEY_CAPS_WORD  <28 31>
+#define COMBO_KEY_CAPS_LOCK  <29 30>
 
 #define USE_HOLD_TAP_LAYER_FUNCTIONS
 #define USE_HOLD_TAP_LAYER_MOUSE
