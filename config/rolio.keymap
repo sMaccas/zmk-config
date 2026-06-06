@@ -33,7 +33,10 @@
 #define COMBO_KEY_CAPS_WORD  <LM1 RM1>
 #define COMBO_KEY_CAPS_LOCK  <LM0 RM0>
 
-#define USE_HOLD_TAP_LAYER_BUTTONS
+// USE_HOLD_TAP_LAYER_BUTTONS is intentionally NOT defined here.
+// Rolio's 5-key thumb cluster gives us a dedicated inner-thumb pair
+// for the Buttons layer (P_SF4_QWT becomes &motg_but) so we don't
+// need to steal Z and / for hold-tap.
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 35

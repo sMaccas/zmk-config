@@ -66,12 +66,6 @@
 // RGB Helpers
 #define RGB_RESET              RGB_COLOR_HSB(0, 0, 60)
 
-// The next set of defines can only be used if you're building against the
-// branch `feat/pointers-move-scroll` from Peter Johanson's ZMK fork.
-// Usually, I would have a "feature-flag" like `USE_MOUSE_POINTERS`, but in
-// this particular case, we can rely on a macro define that would be defined
-// once the branch is merged to mainline.
-#if defined(MOVE_X_DECODE)
 // Mouse actions
 #define MSCRL                  &msc
 #define MMOVE                  &mmv
@@ -94,30 +88,6 @@
 #define MKP_SCRL_DOWN          MSCRL SCROLL_DOWN
 #define MKP_SCRL_UP            MSCRL SCROLL_UP
 #define MKP_SCRL_RIGHT         MSCRL SCROLL_RIGHT
-#else
-// Mouse actions
-#define MSCRL                  &kp
-#define MMOVE                  &kp
-// Mouse scroll directions
-#define SCROLL_UP              UP
-#define SCRLUP                 SCROLL_UP
-#define SCROLL_DOWN            DOWN
-#define SCRLDN                 SCROLL_DOWN
-#define SCROLL_LEFT            LEFT
-#define SCRLL                  SCROLL_LEFT
-#define SCROLL_RIGHT           RIGHT
-#define SCRLR                  SCROLL_RIGHT
-// Mouse movements
-#define MKP_MOVE_LEFT          &kp KP_N4
-#define MKP_MOVE_DOWN          &kp KP_N2
-#define MKP_MOVE_UP            &kp KP_N8
-#define MKP_MOVE_RIGHT         &kp KP_N6
-// Scroll wheel
-#define MKP_SCRL_LEFT          &none
-#define MKP_SCRL_DOWN          &none
-#define MKP_SCRL_UP            &none
-#define MKP_SCRL_RIGHT         &none
-#endif
 
 // This helper macro allow one to define a normal key with a special output with
 // pressing shift. This is useful when you want to create a key that, its
