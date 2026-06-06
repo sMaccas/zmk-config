@@ -315,4 +315,5 @@ point, and that is the reason this layer is here, but this day is not today :).
 ## Disclaimers
 
 The Corne image, I used in the header of this document, is from
-[Typeractive](https://typeractive.xyz), the vendor where I purchase my Corne-42.
+[Typeractive](https://typeractive.xyz), the vendor where I purchase my Corne42
+Kit.
