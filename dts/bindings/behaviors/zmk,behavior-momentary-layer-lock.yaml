@@ -1,0 +1,13 @@
+description: |
+  Momentary Layer Lock - locks the topmost currently-active layer on press.
+  A second tap unlocks (and deactivates) it. When no non-base layer is active,
+  the configured `bindings` phandle is invoked instead.
+
+compatible: "zmk,behavior-momentary-layer-lock"
+
+include: zero_param.yaml
+
+properties:
+  bindings:
+    type: phandle-array
+    required: true

@@ -8,54 +8,54 @@
 # shield: [ "corne_left", "corne_right" ]
 # include:
 #   - board: bdn9_rev2
-#   - board: nice_nano_v2
+#   - board: nice_nano//zmk
 #     shield: reviung41
 #
 ---
 include:
   # Corne-42 OLED Firmeare
   # - keyboard: Corne 42 OLED
-  #   board: nice_nano_v2
+  #   board: nice_nano//zmk
   #   shield: corne_left
   #   cmake-args: -DEXTRA_CONF_FILE=../../config/corne_oled.conf
   #   artifact-name: zmk-corne-42-oled-left
   # - keyboard: Corne 42 OLED
-  #   board: nice_nano_v2
+  #   board: nice_nano//zmk
   #   shield: corne_right
   #   cmake-args: -DEXTRA_CONF_FILE=../../config/corne_oled.conf
   #   artifact-name: zmk-corne-42-oled-right
   # - keyboard: Corne 42 OLED
-  #   board: nice_nano_v2
+  #   board: nice_nano//zmk
   #   shield: settings_reset
   #   artifact-name: zmk-corne-42-oled-settings-reset
 
   # Corne-42 nice!view Firmeare
   - keyboard: Corne 42 nice!view
-    board: nice_nano_v2
+    board: nice_nano//zmk
     shield: corne_left nice_view_adapter nice_view
     cmake-args: -DEXTRA_CONF_FILE=../../config/corne_niceview.conf
     artifact-name: zmk-corne-42-niceview-left
   - keyboard: Corne 42 nice!view
-    board: nice_nano_v2
+    board: nice_nano//zmk
     shield: corne_right nice_view_adapter nice_view
     cmake-args: -DEXTRA_CONF_FILE=../../config/corne_niceview.conf
     artifact-name: zmk-corne-42-niceview-right
   - keyboard: Corne 42 nice!view
-    board: nice_nano_v2
+    board: nice_nano//zmk
     shield: settings_reset
     artifact-name: zmk-corne-42-niceview-settings-reset
 
   # Rolio46.2
   - keyboard: Rolio46.2 Vista508
-    board: nice_nano_v2
+    board: nice_nano//zmk
     shield: rolio_left vista508
     artifact-name: zmk-rolio-46-left
   - keyboard: Rolio46.2 Vista508
-    board: nice_nano_v2
+    board: nice_nano//zmk
     shield: rolio_right vista508
     artifact-name: zmk-rolio-46-right
   - keyboard: Rolio46.2 Vista508
-    board: nice_nano_v2
+    board: nice_nano//zmk
     shield: settings_reset
     artifact-name: zmk-rolio-46-settings-reset
 
@@ -64,14 +64,14 @@ include:
   # disabled. See docs/lily58.md.
   # Lili58 Firmeare
   # - keyboard: Lily58
-  #   board: nice_nano_v2
+  #   board: nice_nano//zmk
   #   shield: lily58_left nice_view_adapter nice_view
   #   artifact-name: zmk-lily58-left
   # - keyboard: Lily58
-  #   board: nice_nano_v2
+  #   board: nice_nano//zmk
   #   shield: lily58_right nice_view_adapter nice_view
   #   artifact-name: zmk-lily58-right
   # - keyboard: Lily58
-  #   board: nice_nano_v2
+  #   board: nice_nano//zmk
   #   shield: settings_reset
   #   artifact-name: zmk-lily58-settings-reset

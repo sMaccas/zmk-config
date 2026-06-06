@@ -1,0 +1,10 @@
+/ {
+    behaviors {
+        /omit-if-no-ref/ molock: behavior_momentary_layer_lock {
+            compatible = "zmk,behavior-momentary-layer-lock";
+            #binding-cells = <0>;
+            bindings = <&to 0>;
+            display-name = "Mo Lock";
+        };
+    };
+};

@@ -11,6 +11,7 @@
 // (https://www.nerdfonts.com).
 
 #include <behaviors.dtsi>
+#include <behaviors/molock.dtsi>
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>

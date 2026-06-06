@@ -76,13 +76,13 @@
 #define MSCRL                  &msc
 #define MMOVE                  &mmv
 // Mouse scroll directions
-#define SCROLL_UP              MOVE_Y(-ZMK_MOUSE_DEFAULT_SCRL_VAL)
+#define SCROLL_UP              MOVE_Y(-ZMK_POINTING_DEFAULT_SCRL_VAL)
 #define SCRLUP                 SCROLL_UP
-#define SCROLL_DOWN            MOVE_Y(ZMK_MOUSE_DEFAULT_SCRL_VAL)
+#define SCROLL_DOWN            MOVE_Y(ZMK_POINTING_DEFAULT_SCRL_VAL)
 #define SCRLDN                 SCROLL_DOWN
-#define SCROLL_LEFT            MOVE_X(ZMK_MOUSE_DEFAULT_SCRL_VAL)
+#define SCROLL_LEFT            MOVE_X(ZMK_POINTING_DEFAULT_SCRL_VAL)
 #define SCRLL                  SCROLL_LEFT
-#define SCROLL_RIGHT           MOVE_X(-ZMK_MOUSE_DEFAULT_SCRL_VAL)
+#define SCROLL_RIGHT           MOVE_X(-ZMK_POINTING_DEFAULT_SCRL_VAL)
 #define SCRLR                  SCROLL_RIGHT
 // Mouse movements
 #define MKP_MOVE_LEFT          MMOVE MOVE_LEFT
