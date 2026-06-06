@@ -1,7 +1,7 @@
 # ZMK Custom Layouts
 
-[![ZMK version](https://img.shields.io/badge/ZMK-3.5-blue)](https://zmk.dev/)
-[![Firmware build](https://img.shields.io/github/actions/workflow/status/Townk/zmk-config/build.yml?label=firmware%20build)](https://github.com/Townk/zmk-config/actions/workflows/build.yml)
+[![ZMK version](https://img.shields.io/badge/ZMK-upstream-blue)](https://zmk.dev/)
+[![Firmware build](https://img.shields.io/github/actions/workflow/status/reybits/zmk-config/build.yml?label=firmware%20build)](https://github.com/reybits/zmk-config/actions/workflows/build.yml)
 
 This repository contains the ZMK user configuration for all my keyboards that
 use the [ZMK](https://zmk.dev/) firmware.
@@ -246,7 +246,8 @@ again and again. When that happens… Rinse and repeat.
 
 If you want to build this configuration locally, first, follow [ZMK's
 instructions](https://zmk.dev/docs/development/setup/native) to be able to build
-the firmware itself.
+the firmware itself. The build runs against upstream ZMK on Zephyr 4.1, so make
+sure your Zephyr SDK is current.
 
 Then, get a Python environment ready (you can use your OS Python, or you can
 create a virtual environment just for the project), and install the required
@@ -256,46 +257,53 @@ dependencies to it:
 $ pip install -r support/requirements.txt
 ```
 
-You can build the firmware for all keyboards I have with the following command:
+Run all subsequent commands from the repository root. The build needs
+`-DZMK_EXTRA_MODULES="$PWD"` so Zephyr discovers the locally-vendored shields
+(`boards/shields/{rolio,vista508}/`) and the in-repo `&molock` behavior driver
+(`src/behaviors/`). The board name is the Zephyr-4.1 form: `nice_nano//zmk`
+(short for `nice_nano@2.0.0//zmk`).
 
 ```sh
-$ west build -p -d build/corne-left -b nice_nano_v2 -- \
-    -DSHIELD=corne_left \
-    -DDTS_EXTRA_CPPFLAGS="-DUSE_MOLOCK=1" \
-    -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
-  && west build -p -d build/corne-right -b nice_nano_v2 -- \
-    -DSHIELD=corne_right \
-    -DDTS_EXTRA_CPPFLAGS="-DUSE_MOLOCK=1" \
-    -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
-  && west build -p -d build/lily-left -b nice_nano_v2 -- \
-    -DSHIELD="lily58_left nice_view_adapter nice_view" \
-    -DDTS_EXTRA_CPPFLAGS="-DUSE_MOLOCK=1" \
-    -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
-  && west build -p -d build/lily-right -b nice_nano_v2 -- \
-    -DSHIELD="lily58_right nice_view_adapter nice_view" \
-    -DDTS_EXTRA_CPPFLAGS="-DUSE_MOLOCK=1" \
-    -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
-  && west build -p -d build/settings-reset -b nice_nano_v2 -- \
-    -DSHIELD="settings_reset" \
-    -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config"
+$ west build -p -d build/rolio-left -b 'nice_nano//zmk' -- \
+    -DSHIELD='rolio_left vista508' \
+    -DZMK_EXTRA_MODULES="$PWD" \
+    -DZMK_CONFIG="$PWD/config" \
+  && west build -p -d build/rolio-right -b 'nice_nano//zmk' -- \
+    -DSHIELD='rolio_right vista508' \
+    -DZMK_EXTRA_MODULES="$PWD" \
+    -DZMK_CONFIG="$PWD/config" \
+  && west build -p -d build/corne-left -b 'nice_nano//zmk' -- \
+    -DSHIELD='corne_left nice_view_adapter nice_view' \
+    -DEXTRA_CONF_FILE="$PWD/config/corne_niceview.conf" \
+    -DZMK_EXTRA_MODULES="$PWD" \
+    -DZMK_CONFIG="$PWD/config" \
+  && west build -p -d build/corne-right -b 'nice_nano//zmk' -- \
+    -DSHIELD='corne_right nice_view_adapter nice_view' \
+    -DEXTRA_CONF_FILE="$PWD/config/corne_niceview.conf" \
+    -DZMK_EXTRA_MODULES="$PWD" \
+    -DZMK_CONFIG="$PWD/config" \
+  && west build -p -d build/settings-reset -b 'nice_nano//zmk' -- \
+    -DSHIELD=settings_reset \
+    -DZMK_EXTRA_MODULES="$PWD" \
+    -DZMK_CONFIG="$PWD/config"
 ```
 
-After the first build, you can simplify the build command to the following:
+After the first build, subsequent builds only need the build dir:
 
 ```sh
-$ west build -d build/corne-left \
+$ west build -d build/rolio-left \
+  && west build -d build/rolio-right \
+  && west build -d build/corne-left \
   && west build -d build/corne-right \
-  && west build -d build/lily-left \
-  && west build -d build/lily-right \
   && west build -d build/settings-reset
 ```
 
-And if you make any modifications to the keymap, make sure you update the assets
-used in the documentation, by running the `update-layout-maps.sh` script from
-the `support` directory:
+If you make any modifications to the keymap, regenerate the layout SVGs used in
+the documentation. The script passes `-DUSE_MOLOCK=1` to `keymap-drawer` so the
+universal `&molock` key shows up annotated in the rendered images (it has no
+effect on the firmware build itself — `&molock` is always available there):
 
 ```sh
-$ cd "$TOWNK_ZMK_CONFIG_DIR"
 $ ./support/update-layout-maps.sh
 ```
 
