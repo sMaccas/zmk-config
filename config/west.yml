@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: dhruvinsh
       url-base: https://github.com/dhruvinsh
-    - name: rolio
-      url-base: https://github.com/Townk
+    - name: MickiusMousius
+      url-base: https://github.com/MickiusMousius
   projects:
     - name: zephyr
       remote: zmkfirmware
@@ -42,9 +42,9 @@ manifest:
       remote: dhruvinsh
       revision: ccca8fbe6bfb1efc30d0374029de3e7d0425fe76
       clone-depth: 1
-    - name: zmk-rolio-shield
-      remote: rolio
-      revision: develop
+    - name: zmk-ls0xxvcom-driver
+      remote: MickiusMousius
+      revision: 9a804fc951bc5363475db47abdd4e9993c629c44
       clone-depth: 1
   self:
     path: config

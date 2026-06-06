@@ -3,5 +3,7 @@
 .west/
 build/
 modules/
-zephyr/
+zephyr/*
+!zephyr/module.yml
 zmk/
+CLAUDE.md
