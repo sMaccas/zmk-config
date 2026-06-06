@@ -7,3 +7,4 @@ zephyr/*
 !zephyr/module.yml
 zmk/
 CLAUDE.md
+.scratch.md
