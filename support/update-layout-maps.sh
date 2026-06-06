@@ -114,7 +114,6 @@ export_layout_map() {
 }
 
 export_layout_map Corne 42
-export_layout_map Lily58
 export_layout_map Rolio 46 "${CONFIG_ROOT}/support/rolio_layout.json"
 
 echo "Exporting layers Glyphs..."

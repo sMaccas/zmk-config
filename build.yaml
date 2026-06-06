@@ -58,20 +58,3 @@ include:
     board: nice_nano//zmk
     shield: settings_reset
     artifact-name: zmk-rolio-46-settings-reset
-
-  # Lily58 — unowned, unverified config. The keymap files are kept because
-  # they share the master layout, but the firmware build is intentionally
-  # disabled. See docs/lily58.md.
-  # Lili58 Firmeare
-  # - keyboard: Lily58
-  #   board: nice_nano//zmk
-  #   shield: lily58_left nice_view_adapter nice_view
-  #   artifact-name: zmk-lily58-left
-  # - keyboard: Lily58
-  #   board: nice_nano//zmk
-  #   shield: lily58_right nice_view_adapter nice_view
-  #   artifact-name: zmk-lily58-right
-  # - keyboard: Lily58
-  #   board: nice_nano//zmk
-  #   shield: settings_reset
-  #   artifact-name: zmk-lily58-settings-reset
