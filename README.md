@@ -3,6 +3,33 @@
 [![ZMK version](https://img.shields.io/badge/ZMK-upstream-blue)](https://zmk.dev/)
 [![Firmware build](https://img.shields.io/github/actions/workflow/status/reybits/zmk-config/build.yml?label=firmware%20build)](https://github.com/reybits/zmk-config/actions/workflows/build.yml)
 
+> [!NOTE]
+> **Fork of [Townk/zmk-config](https://github.com/Townk/zmk-config).** The
+> base layout and the master-layout-plus-adapter idea come from there. The
+> fork has diverged enough that it's worth listing the substantive changes:
+>
+> - **Built against upstream ZMK on Zephyr 4.1.** The original pinned a
+>   personal fork (`Townk/zmk@mousemove-molock`) on Zephyr 3.5. CI now
+>   builds against `zmkfirmware/zmk@main` for `nice_nano//zmk`.
+> - **Standalone `&molock` behavior module** at the repo root, riding on
+>   upstream's first-class layer-locking API (PR #2717) instead of carrying
+>   a patch inside the ZMK source tree.
+> - **Vendored shields.** `boards/shields/{rolio,vista508}/` live in-repo,
+>   no longer pulled from `Townk/zmk-rolio-shield`.
+> - **Vista508 widgets ported to LVGL 9.** Includes the load-bearing
+>   `CONFIG_ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE=8192` — without it the
+>   display thread overflows its stack inside LVGL 9's layer/draw chain
+>   and the keyboard never advertises over BLE or enumerates over USB.
+> - **Lily58 support removed** (unowned by this maintainer).
+> - **Rolio's Buttons layer** moved to the dedicated inner-thumb keys
+>   (Corne keeps the Z/`/` hold-tap variant since it lacks the extra
+>   thumb positions).
+> - **Layout deltas vs. upstream prose**: `` ` `` ↔ `⇥` swap on the base
+>   alpha row; homerow mod order is `⌘ ⌥ ^ ⇧` pinky-to-index on both
+>   hands; Numbers layer swaps `⏎` and `⇥`; Navigation and Mouse right-hand
+>   bindings shifted one column inward; new G+H combo emits `CAPS_LOCK`
+>   (used for the macOS PL ↔ EN input-source toggle).
+
 This repository contains the ZMK user configuration for all my keyboards that
 use the [ZMK](https://zmk.dev/) firmware.
 
@@ -246,14 +273,6 @@ If you want to build this configuration locally, first, follow [ZMK's
 instructions](https://zmk.dev/docs/development/setup/native) to be able to build
 the firmware itself. The build runs against upstream ZMK on Zephyr 4.1, so make
 sure your Zephyr SDK is current.
-
-Then, get a Python environment ready (you can use your OS Python, or you can
-create a virtual environment just for the project), and install the required
-dependencies to it:
-
-```sh
-$ pip install -r support/requirements.txt
-```
 
 Run all subsequent commands from the repository root. The build needs
 `-DZMK_EXTRA_MODULES="$PWD"` so Zephyr discovers the locally-vendored shields

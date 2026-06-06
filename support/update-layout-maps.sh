@@ -2,6 +2,43 @@
 
 CONFIG_ROOT="$(git rev-parse --show-toplevel)"
 
+# merge_yaml.py needs PyYAML. The system python3 typically doesn't have it,
+# but the keymap-drawer pipx venv does (PyYAML is one of its dependencies).
+# Prefer the venv's interpreter by reading the shebang of the `keymap` binary;
+# fall back to system python3/python if that fails.
+KEYMAP_BIN="$(command -v keymap)"
+if [[ -z "$KEYMAP_BIN" ]]; then
+  echo "Error: 'keymap' not found in PATH. Install keymap-drawer first:" >&2
+  echo "  pipx install keymap-drawer && pipx ensurepath" >&2
+  exit 1
+fi
+
+PYTHON="$(sed -n '1{s|^#!\([^[:space:]]*\).*|\1|;p;}' "$KEYMAP_BIN")"
+if [[ ! -x "$PYTHON" ]]; then
+  PYTHON="$(command -v python3 || command -v python)"
+fi
+if [[ -z "$PYTHON" ]] || [[ ! -x "$PYTHON" ]]; then
+  echo "Error: no usable Python interpreter found" >&2
+  exit 1
+fi
+
+# Quick sanity check that this Python can import yaml
+if ! "$PYTHON" -c 'import yaml' >/dev/null 2>&1; then
+  echo "Error: PyYAML is not available for $PYTHON." >&2
+  echo "If you're using a system Python, install it with: pip install --user pyyaml" >&2
+  exit 1
+fi
+
+# Locate keymap-drawer's cache directory in an OS-agnostic way.
+# Falls back to common conventions if keymap-drawer can't tell us.
+KD_CACHE="$("$PYTHON" -c 'from platformdirs import user_cache_dir; print(user_cache_dir("keymap-drawer"))' 2>/dev/null)"
+if [[ -z "$KD_CACHE" ]]; then
+  case "$(uname -s)" in
+    Darwin) KD_CACHE="$HOME/Library/Caches/keymap-drawer" ;;
+    *)      KD_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/keymap-drawer" ;;
+  esac
+fi
+
 export_layer() {
   local KEYMAP_NAME=$1
   local LAYER_NAME=$2
@@ -54,7 +91,7 @@ export_layout_map() {
   # the normal configuration, merged with the "no symbols" diff that we have on
   # the repository.
   KD_CONFIG_NO_SYMBOLS="$(mktemp).yaml"
-  python "${CONFIG_ROOT}/support/merge_yaml.py" \
+  "$PYTHON" "${CONFIG_ROOT}/support/merge_yaml.py" \
     "$KD_CONFIG_MAIN" \
     "${CONFIG_ROOT}/support/keymap-config-no-shift-symbols.yaml" > "$KD_CONFIG_NO_SYMBOLS"
 
@@ -93,12 +130,12 @@ export_layout_map() {
   done
 
   KD_CONFIG_BACKGROUND="$(mktemp).yaml"
-  python "${CONFIG_ROOT}/support/merge_yaml.py" \
+  "$PYTHON" "${CONFIG_ROOT}/support/merge_yaml.py" \
     "$KD_CONFIG_MAIN" \
     "${CONFIG_ROOT}/support/keymap-config-background-color.yaml" > "$KD_CONFIG_BACKGROUND"
 
   echo "- Exporting full layout map image for packaging"
-  mkdir -p "${CONFIG_ROOT}/build"
+  mkdir -p "${CONFIG_ROOT}/build/out"
   keymap -c "${KD_CONFIG_BACKGROUND}" draw \
     "${EXTRA_FLAG[@]}" \
     -s "${LAYOUT_LAYERS[@]}" \
@@ -121,11 +158,13 @@ mkdir -p "${CONFIG_ROOT}/docs/glyphs"
 
 # I need to copy the cached symbols from Keymap Drawer into my repository so
 # the table of key symbols I have on the README file can render correctly.
-for g in ~/Library/Caches/keymap-drawer/glyphs/*; do
+shopt -s nullglob
+for g in "$KD_CACHE"/glyphs/*; do
   # I'm using `sed` to copy the file because I need to add `height`, `width`,
   # and `color` to the SVG, since GitHub does not allow me to have all the CSS
   # styles I want... I think :)
-  sed 's/viewBox="0 0 24 24"/viewBox="0 0 24 24" height="20px" width="20px" fill="#e8eaed"/' "$g" > "${CONFIG_ROOT}/docs/glyphs/${g#*mdi:}"
+  sed 's/viewBox="0 0 24 24"/viewBox="0 0 24 24" height="20px" width="20px" fill="#e8eaed"/' "$g" > "${CONFIG_ROOT}/docs/glyphs/${g##*mdi:}"
 done
+shopt -u nullglob
 
 echo "Done!"

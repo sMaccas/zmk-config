@@ -43,24 +43,6 @@ Some notable features are:
 - **Timeless homerow mods**: Homerow mod configuration based on [Robert U
   (@urob)'s ZMK configuration](https://github.com/urob/zmk-config);
 
-> [!NOTE]
-> The layer-map images below were generated from an earlier revision of the
-> keymap and have not been re-rendered yet. The prose in each section
-> describes the **current** behavior. Notable deltas vs. the maps:
->
-> - **Base layers (QWERTY & COLEMAK)**: the leftmost column has `` ` ``
->   (Grave) on the top alpha row and `⇥` (Tab) on the homerow row — the
->   maps show them swapped.
-> - **Homerow mods**: from pinky to index, both hands hold `⌘ ⌥ ^ ⇧`
->   (Gui, Alt, Ctrl, Shift). The maps show an older `^ ⌥ ⌘ ⇧`
->   (Ctrl, Alt, Gui, Shift) order.
-> - **Numbers layer**: `⏎` is on the leftmost top-row key with `⇥` one
->   row below it — swapped from what the map shows.
-> - **Navigation and Mouse layers**: every right-hand binding is one slot
->   closer to the inner column than the map indicates (the leading empty
->   slots in the maps no longer exist).
-> - **`G + H` combo** triggers `CAPS_LOCK` — not drawn on layer maps.
-
 ## Base Layer
 
 ![Default base layer layout](./images/corne42-layer0-main.svg)
@@ -284,6 +266,10 @@ I made the usual _Escape_ key to be the _stop_, so it's easy to remember.
 ## Buttons Layer
 
 ![Buttons layer layout](./images/corne42-layer7-buttons.svg)
+
+Corne lacks the wide thumb cluster Rolio has, so this layer is reached via
+hold-tap on `Z` (left) and `/` (right) — tap behaves as the letter, hold
+activates the Buttons layer.
 
 ## System Layer
 

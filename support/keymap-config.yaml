@@ -34,8 +34,8 @@ parse_config:
     #define MOVE_UP 3
     #define MOVE_RIGHT 4
     #define MOVE_X_DECODE 1
-    #define ZMK_MOUSE_DEFAULT_MOVE_VAL 600
-    #define ZMK_MOUSE_DEFAULT_SCRL_VAL 10
+    #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
+    #define ZMK_POINTING_DEFAULT_SCRL_VAL 35
     #define MOVE_Y(vert) vert
     #define MOVE_X(hor) hor+10
 
@@ -451,10 +451,10 @@ parse_config:
     "&mmv MOVE_UP": { t: "$$mdi:mouse$$", h: "↑" }
     "&mmv MOVE_RIGHT": { t: "$$mdi:mouse$$", h: "→" }
     # Mouse scrollwheel
-    "&msc MOVE_X(ZMK_MOUSE_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-vertical$$", h: "left" }
-    "&msc MOVE_Y(ZMK_MOUSE_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-horizontal$$", h: "down" }
-    "&msc MOVE_Y(-ZMK_MOUSE_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-horizontal$$", h: "up" }
-    "&msc MOVE_X(-ZMK_MOUSE_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-vertical$$", h: "right" }
+    "&msc MOVE_X(ZMK_POINTING_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-vertical$$", h: "left" }
+    "&msc MOVE_Y(ZMK_POINTING_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-horizontal$$", h: "down" }
+    "&msc MOVE_Y(-ZMK_POINTING_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-horizontal$$", h: "up" }
+    "&msc MOVE_X(-ZMK_POINTING_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-vertical$$", h: "right" }
     # Mouse buttons
     "&mkp LCLK": { t: "$$mdi:mouse-left-click-outline$$", h: "primary" }
     "&mkp MB1": { t: "$$mdi:mouse-left-click-outline$$", h: "primary" }
@@ -462,6 +462,8 @@ parse_config:
     "&mkp MB2": { t: "$$mdi:mouse-right-click-outline$$", h: "right" }
     "&mkp MCLK": { t: "$$mdi:mouse-right-click-outline$$", h: "middle" }
     "&mkp MB3": { t: "$$mdi:mouse-right-click-outline$$", h: "middle" }
+    "&mkp MB4": { t: "$$mdi:mouse$$", h: "back" }
+    "&mkp MB5": { t: "$$mdi:mouse$$", h: "forward" }
 
     # Keyboard shortcut combinations
     #---------------------------------------------------------------------------
