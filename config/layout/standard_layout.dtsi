@@ -271,11 +271,11 @@
       bindings = <&mo L_FUN>, <&tog L_FUN>;
     };
 
-    //// Tap: -
-    //// Shift-tap: -
-    //// Double-tap: Toggle Mouse Layer
-    //// Hold: Activate Mouse Layer
-    //// Morph: -
+    // Tap: -
+    // Shift-tap: -
+    // Double-tap: Toggle Mouse Layer
+    // Hold: Activate Mouse Layer
+    // Morph: -
     motg_mou: momentary_or_toggle_layer_mou {
       compatible = "zmk,behavior-tap-dance";
       #binding-cells = <0>;
