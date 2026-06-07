@@ -401,6 +401,11 @@ parse_config:
     "&rgb_ug RGB_SAD": { t: "$$mdi:palette-outline$$", h: "sat-" }
     "&rgb_ug RGB_BRI": { t: "$$mdi:palette-outline$$", h: "light+" }
     "&rgb_ug RGB_BRD": { t: "$$mdi:palette-outline$$", h: "light-" }
+    # Brightness (F15 / F14 wrapped as macros so the firmware sends Apple's
+    # historical brightness keys while keymap-drawer still renders them as
+    # brightness icons — see config/layout/specialkeys.dtsi).
+    "&bri_up": "$$mdi:brightness-7$$"
+    "&bri_dn": "$$mdi:brightness-5$$"
     # Backlight
     "&bl BL_INC": "$$mdi:lightbulb-on-90$$"
     "&bl BL_DEC": "$$mdi:lightbulb-on-20$$"

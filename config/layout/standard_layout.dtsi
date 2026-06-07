@@ -533,8 +533,8 @@
       display-name = "Media";
       bindings = <LAYER_ADAPTER(
         &none, &none,        &none,      &none,      &none,        &none,                                &none,      &none,     &none,     &none,     &none,     &none,
-        &none, &kp C_BRI_UP, &none,      &kp C_STOP, &none,        &kp C_VOL_UP, &kp LHYP,    &kp RHYP,  &none,      &none,     &none,     &none,     &none,     &none,
-        &none, &kp C_BRI_DN, &kp C_PREV, &kp C_PP,   &kp C_NEXT,   &kp C_VOL_DN, &kp LMEH,    &kp RMEH,  &none,      &kp RHRM1, &kp RHRM2, &kp RHRM3, &kp RHRM4, &none,
+        &none, &bri_up,      &none,      &kp C_STOP, &none,        &kp C_VOL_UP, &kp LHYP,    &kp RHYP,  &none,      &none,     &none,     &none,     &none,     &none,
+        &none, &bri_dn,      &kp C_PREV, &kp C_PP,   &kp C_NEXT,   &kp C_VOL_DN, &kp LMEH,    &kp RMEH,  &none,      &kp RHRM1, &kp RHRM2, &kp RHRM3, &kp RHRM4, &none,
         &none, &none,        &none,      &none,      &none,        &kp C_MUTE,   &kp HOME,    &kp PG_UP, &none,      &none,     &none,     &none,     &none,     &kp GLOBE,
                &molock,      &none,      &none,      &none,        &none,        &kp END,     &kp PG_DN, &tog L_MED, &none,     &none,     &none,     &none
       )>;

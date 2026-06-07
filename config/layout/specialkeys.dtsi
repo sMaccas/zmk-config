@@ -115,6 +115,24 @@
 
 / {
   macros {
+    // Apple's "F14" / "F15" are the historical brightness-down / brightness-up
+    // keys on Mac keyboards. macOS treats these as built-in display brightness
+    // even when sent from non-Apple keyboards, whereas the standard HID
+    // consumer-page brightness codes (C_BRI_UP/C_BRI_DN) get ignored on recent
+    // macOS versions. Wrap them as named macros so keymap-drawer can render
+    // them with brightness icons in the MED layer (see support/keymap-config.yaml)
+    // without affecting the bare F14/F15 keys on the FUNCTIONS layer.
+    bri_up: brightness_up {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp F15>;
+    };
+
+    bri_dn: brightness_down {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp F14>;
+    };
   };
 };
 
