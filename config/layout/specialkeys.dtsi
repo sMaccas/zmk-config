@@ -115,14 +115,6 @@
 
 / {
   macros {
-    // This is a helper macro increases the keyboard's backlight intensity, but
-    // it also guarantees that the backlight feature is turned ON before doing
-    // so.
-    bl_inc: backlight_on_and_increase {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&bl BL_ON>, <&bl BL_INC>;
-    };
   };
 };
 
@@ -155,20 +147,6 @@
     // Underglow RESET, that, when double-tapped, zero-out all the underglow
     // values.
     DEFINE_DOUBLE_TAP_KEY(ug_reset, &rgb_ug RGB_RESET, &rgb_ug RGB_COLOR_HSB(0, 0, 0))
-
-    // Backlight DECREASE, that, when double-tapped, turn off the keyboard
-    // backlight.
-    DEFINE_DOUBLE_TAP_KEY(bl_dec, &bl BL_DEC, &bl BL_OFF)
-
-    // The GLOBE key does not have all the functionalities Apple's version of
-    // the key has, so I'm adding a new one to it:
-    // When you double-tap it, it will activate the CAPS-WORD mode.
-    globecaps: globe_or_caps_word {
-      compatible = "zmk,behavior-tap-dance";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&kp GLOBE>, <&caps_word>;
-    };
 
     mouscrl: mouse_scroller {
       compatible = "zmk,behavior-sensor-rotate-var";

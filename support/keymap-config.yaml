@@ -399,10 +399,8 @@ parse_config:
     "&rgb_ug RGB_BRD": { t: "$$mdi:palette-outline$$", h: "light-" }
     # Backlight
     "&bl BL_INC": "$$mdi:lightbulb-on-90$$"
-    "&bl_inc": "$$mdi:lightbulb-on-90$$"
     "&bl BL_DEC": "$$mdi:lightbulb-on-20$$"
     "&bl BL_TOG": "$$mdi:lightbulb-off-outline$$"
-    "&bl_dec": { t: "$$mdi:lightbulb-on-20$$", s: "2x: off" }
     # Power Management
     "&ext_power EP_TOG": "$$mdi:power-plug-outline$$"
 
