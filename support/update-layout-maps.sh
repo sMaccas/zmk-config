@@ -42,7 +42,7 @@ fi
 export_layer() {
   local KEYMAP_NAME=$1
   local LAYER_NAME=$2
-  local LAYOUR_FILE=$3
+  local LAYOUT_FILE=$3
   local EXTRA_LAYOUT="$4"
   local -a EXTRA_FLAG=()
 
@@ -54,7 +54,7 @@ export_layer() {
   keymap -c "${CONFIG_ROOT}/support/keymap-config.yaml" draw \
     "${EXTRA_FLAG[@]}" \
     -s "$LAYER_NAME" \
-    -o "${CONFIG_ROOT}/docs/images/$LAYOUR_FILE" \
+    -o "${CONFIG_ROOT}/docs/images/$LAYOUT_FILE" \
     "$KEYMAP_NAME"
 }
 
@@ -96,7 +96,7 @@ export_layout_map() {
     "${CONFIG_ROOT}/support/keymap-config-no-shift-symbols.yaml" > "$KD_CONFIG_NO_SYMBOLS"
 
   # The second part of the file contains the rest of the layout map with keys NOT
-  # shoing their "Shift" symbol.
+  # showing their "Shift" symbol.
   keymap -c "$KD_CONFIG_NO_SYMBOLS" parse -z "${CONFIG_ROOT}/config/${KEYMAP_NAME}.keymap" \
     | sed -n '/Navigation:/,$ p' >> "$KD_KEYMAP"
 

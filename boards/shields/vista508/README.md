@@ -21,4 +21,4 @@ Significant portions of the code in this directory came from the original ZMK ni
 
 The original code can be found here: https://github.com/zmkfirmware/zmk/tree/main/app/boards/shields/nice_view
 
-This repository must preserve the original MIT licence.
+This repository must preserve the original MIT license.

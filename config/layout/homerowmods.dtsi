@@ -5,8 +5,8 @@
  */
 
 // The next defines are helpers to describe a home row modifiers by a numerical
-// importance. Smaller numbers are _more important_ then the others.
-// Importance, in this contexts, is defined by which finger you use to press the
+// importance. Smaller numbers are _more important_ than the others.
+// Importance, in this context, is defined by which finger you use to press the
 // modifier:
 //
 // 1. Index finger;
@@ -18,7 +18,7 @@
 //
 // `<Keyboard side: L or R>HRM<Importance>`
 //
-// For instance, the define `RHRME3` represents the Home Row Modifier on the
+// For instance, the define `RHRM3` represents the Home Row Modifier on the
 // right side of the keyboard, that you press with your ring finger.
 
 // Left side
@@ -81,7 +81,7 @@
 
 / {
   behaviors {
-    // The firs behavior is for homerow mods that are NOT the shift key, so
+    // The first behavior is for homerow mods that are NOT the shift key, so
     // we're free to use the `require-prior-idle-ms` property
     DEFINE_HRM(hml, home_row_mod_left, &kp, &kp, KEYS_R THUMBS,
       require-prior-idle-ms = <100>;

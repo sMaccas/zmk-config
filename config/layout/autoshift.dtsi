@@ -9,7 +9,7 @@
 // to me.
 //
 // Also, when using this behavior, you should not use it directly. Use the
-// macro function defined bellow it for a better syntax.
+// macro function defined below it for a better syntax.
 / {
   behaviors {
     as: auto_shift {

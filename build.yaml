@@ -1,4 +1,4 @@
-# Thias file generates the GitHub Actions matrix
+# This file generates the GitHub Actions matrix
 # For simple board + shield combinations, add them
 # to the top level board and shield arrays, for more
 # control, add individual board + shield combinations to
@@ -13,7 +13,7 @@
 #
 ---
 include:
-  # Corne-42 OLED Firmeare
+  # Corne-42 OLED Firmware
   # - keyboard: Corne 42 OLED
   #   board: nice_nano//zmk
   #   shield: corne_left
@@ -29,7 +29,7 @@ include:
   #   shield: settings_reset
   #   artifact-name: zmk-corne-42-oled-settings-reset
 
-  # Corne-42 nice!view Firmeare
+  # Corne-42 nice!view Firmware
   - keyboard: Corne 42 nice!view
     board: nice_nano//zmk
     shield: corne_left nice_view_adapter nice_view

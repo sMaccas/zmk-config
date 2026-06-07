@@ -44,7 +44,7 @@
  * ╰───╮ LF2 --- --- LF1 LF0 --- │ --- RF0 RF1 --- --- RF2 ╭───╯
  *     ╰─────────────────────────┴─────────────────────────╯
  *
- * Different then most "key positions" files I found out there, my key position
+ * Different than most "key positions" files I found out there, my key position
  * syntax tries to establish a _"stable"_ position for significant keys like
  * homerow mods, bottom keys, and others. Currently, I'm not using all of those
  * significant positions, but I thought that defining them now could save me a

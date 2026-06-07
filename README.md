@@ -166,7 +166,7 @@ _Shift_ key is held-down while tapping it, it will output `@`.
 Now, there is a special type of key that you don't find in standard keyboards
 easily. Those keys output their normal value when tapped, and a different one
 when held-down. These keys are called _“Hold-Tap”_ keys. Most custom layouts
-use them, specially layouts for keyboards with less than 50 keys.
+use them, especially layouts for keyboards with less than 50 keys.
 
 When those keys are shown in my layout maps, they have the _“hold-down”_ value
 displayed below the normal symbol. For instance:

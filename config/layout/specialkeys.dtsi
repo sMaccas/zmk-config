@@ -129,7 +129,7 @@
 // Next are keys I want to modify their standard behavior, like sending an `@`
 // character when pressing the number `9` with a shift modifier, instead of a
 // `(` one. All behaviors defined for the sole purpose of redefining a single
-// key will prefixed with `kp_` to make it easy to identify them.
+// key will be prefixed with `kp_` to make it easy to identify them.
 / {
   behaviors {
     // Make the `BACKSPACE` key behaves like `DEL`, when holding shift down.

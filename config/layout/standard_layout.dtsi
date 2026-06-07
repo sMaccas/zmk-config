@@ -5,7 +5,7 @@
  */
 
 // WARN:
-// If you're open this file on a text editor, make sure your editor is not
+// If you're opening this file on a text editor, make sure your editor is not
 // "wrapping" long lines, is capable of rendering Unicode characters, and it's
 // using a font with symbols from the Nerd Fonts fonts
 // (https://www.nerdfonts.com).
@@ -70,7 +70,7 @@
 // -----------------------                                                       //
 // Due to the different sizes of keyboards I want to support in this             //
 // configuration, there are certain keys that I need to place in one of two      //
-// possible positions. This means that the keyboard X, these keys need to be     //
+// possible positions. This means that for keyboard X, these keys need to be    //
 // placed on position A, but for keyboard Y, these keys should be place on       //
 // position B.                                                                   //
 //                                                                               //
@@ -79,32 +79,32 @@
 //                                                                               //
 // The solution I found was to create optional "feature-flags" (which are        //
 // simple define macros with no value) that each keyboard `.keymap` file may     //
-// define to indicate the want the specion positioning for the keys.             //
+// define to indicate the want for specific positioning of the keys.             //
 //                                                                               //
 // Then, we would define a macro value for each key position we're interested,   //
-// and set their values according to the existance of these "feature-flags"      //
+// and set their values according to the existence of these "feature-flags"      //
 // macros.                                                                       //
 //                                                                               //
 // The macro names I'll use have a specific syntax that would make them easy to  //
 // identify among all other keys:                                                //
 //                                                                               //
-//     P_<OVERAL_POSITION>_<LAYER_ABBREVIATION>[_<ORDER_INDICATION>]             //
+//     P_<OVERALL_POSITION>_<LAYER_ABBREVIATION>[_<ORDER_INDICATION>]             //
 //                                                                               //
-// The `OVERAL_POSITION` follows the syntax for the key position used on the     //
+// The `OVERALL_POSITION` follows the syntax for the key position used on the     //
 // `keypos_def` files, but also allows the use of the `S` side, that represents  //
 // a symetric position on the left and right sides; the `LAYER_ABBREVIATION`     //
 // uses the same names I use on the layer number definition; finally, the        //
 // `ORDER_INDICATION`, which is an optional part that represets... well...the    //
-// order that the key is located in the row specified by the `OVERAL_POSITION`   //
+// order that the key is located in the row specified by the `OVERALL_POSITION`   //
 // part. The order of the key can be anything that makes clear what is the key   //
 // position, but for a key with just two possible positions on the same row, is  //
-// common to use `O` for "outter", and `I` for inner, indicating that the key is //
-// located closer to the outter side of a keyboard half, or its inner side.      //
+// common to use `O` for "outer", and `I` for inner, indicating that the key is //
+// located closer to the outer side of a keyboard half, or its inner side.      //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
 // Definition of macros representing all alternatives positions for the
 // activation of the "Buttons" layer. Notice that COLEMAK and QWERTY share the
-// same keys on the positions choosen for the activation key.
+// same keys on the positions chosen for the activation key.
 #if defined(USE_HOLD_TAP_LAYER_BUTTONS)
 #define P_LB4_QWT  &hll L_BUT Z
 #define P_RB4_QWT  &hlr L_BUT FSLH
@@ -119,17 +119,17 @@
 
 // Definition of macros representing all alternatives positions for the
 // activation of the "Functions" layer. Notice that COLEMAK and QWERTY share the
-// same keys on the positions choosen for the activation key.
+// same keys on the positions chosen for the activation key.
 //
 // Also, is worth explaining that I like to make the alternative hold-tap
 // position to be in the edge of the core cluster of keys. This means that if a
 // keyboard uses hold-tap for "Buttons" and "Functions", the "Buttons" key will
-// positioned on the outter edge of the core cluster, and the "Functions" one
-// will be right besides it thowards the inner side. But when a keyboard only
+// positioned on the outer edge of the core cluster, and the "Functions" one
+// will be right besides it towards the inner side. But when a keyboard only
 // uses the "Functions" layer activation as a hold-tap, then that key will be
-// the one on the outter edge of the main cluster.
+// the one on the outer edge of the main cluster.
 //
-// Think about this as if you have gravity pulling these keys to the outter
+// Think about this as if you have gravity pulling these keys to the outer
 // side of the keyboard.
 #if defined(USE_HOLD_TAP_LAYER_BUTTONS) && defined(USE_HOLD_TAP_LAYER_FUNCTIONS)
 #define P_RB3_QWT  &hlr L_FUN DOT
@@ -161,17 +161,17 @@
 
 // Definition of macros representing all alternatives positions for the
 // activation of the "Mouse" layer. Notice that COLEMAK and QWERTY share the
-// same keys on the positions choosen for the activation key.
+// same keys on the positions chosen for the activation key.
 //
 // Also, is worth explaining that I like to make the alternative hold-tap
 // position to be in the edge of the core cluster of keys. This means that if a
 // keyboard uses hold-tap for "Buttons" and "Mouse", the "Buttons" key will
 // positioned on the outer edge of the core cluster, and the "Mouse" one will
-// be right besides it thowards the inner side. But when a keyboard only uses
+// be right besides it towards the inner side. But when a keyboard only uses
 // the "Mouse" layer activation as a hold-tap, then that key will be the one on
-// the outter edge of the main cluster.
+// the outer edge of the main cluster.
 //
-// Think about this as if you have gravity pulling these keys to the outter
+// Think about this as if you have gravity pulling these keys to the outer
 // side of the keyboard.
 #if defined(USE_HOLD_TAP_LAYER_BUTTONS) && defined(USE_HOLD_TAP_LAYER_MOUSE)
 #define P_LB3_QWT  &hll L_MOU X
@@ -207,7 +207,7 @@
 // behaviors that I create simply to make the layout work, like a hold-tap for
 // the backspace and the activation of layer 2, are all defined inline in this
 // file.
-// This organiztion, is to make it easy to modify behaviors when a key position
+// This organization, is to make it easy to modify behaviors when a key position
 // changes.
 / {
   behaviors {

@@ -123,7 +123,7 @@ which, in my world, is never a good thing.
 
 To solve this issue, Apple made the key right above the `⇥` (`Tab`) key on their
 keyboards, the `` ~ ` `` (`Grave` or `Tilde`) key, work like the `⌘ ⇧ ⇥`. This
-way, moving forward and back on the application list is just a mater of moving
+way, moving forward and back on the application list is just a matter of moving
 your finger from `⇥` to the key above of it.
 
 To mimic this behavior, I used a _“Mod-Morph”_ behavior on the key “below” my
@@ -173,7 +173,7 @@ layer, so I decided to give it a go, just to make my damn brain let go of it.
 
 The first time I used it, though, made my idea about this concept to change
 drastically. It was so intuitive to type numbers for me, that I started to
-wonder why it felt way easier to type numbers this way then with the traditional
+wonder why it felt way easier to type numbers this way than with the traditional
 _“Numpad”_?
 
 After thinking long about it, I believe the problem is a combination of lack of
@@ -223,7 +223,7 @@ Until I stumbled into this image on Reddit:
 > couldn't, so if you know anything about it, please let me know, and I'll
 > update this document with the proper information.
 
-This layout seams to target standard keyboards, and its presentation is so
+This layout seems to target standard keyboards, and its presentation is so
 well-designed that it looks like it is part of a commercial product.
 
 As I was reading through this layout's documentation, it started to click the
@@ -292,10 +292,10 @@ a COLEMAK layout.
 ![COLEMAK base layout layer](./images/corne42-layer9-colemak.svg)
 
 This alternate layout is something I'm flirting for a long time. I read more
-texts than I should about the mater, and while opinions about alternate layouts
-vary from source to source, there are 2 things that could conclude:
+texts than I should about the matter, and while opinions about alternate layouts
+vary from source to source, there are 2 things I could conclude:
 
-1. Using COLEMAK or any other alternate layout, no mater how efficient it is, it
+1. Using COLEMAK or any other alternate layout, no matter how efficient it is, it
    will **not** speed up your typing. You certainly can type at top speed using
    those layouts, but the layout itself is not the reason you're typing fast;
 2. Pretty much every alternate layout out there has advantages over QWERTY when
