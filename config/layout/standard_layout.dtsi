@@ -47,9 +47,9 @@
 #define L_SYM 4
 // Media layer
 #define L_MED 5
-// Buttons layer
+// Mouse layer
 #define L_MOU 6
-// Keyboard system layer
+// Functions layer
 #define L_FUN 7
 // Buttons layer
 #define L_BUT 8
@@ -226,7 +226,7 @@
     // Tap: -
     // Shift-tap: -
     // Double-tap: Toggle Navigation Layer
-    // Hold: Activate System Layer
+    // Hold: Activate Navigation Layer
     // Morph: -
     motg_nav: momentary_or_toggle_layer_nav {
       compatible = "zmk,behavior-tap-dance";
