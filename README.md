@@ -232,7 +232,7 @@ keyboards, so as an Apple user, I wanted to have the same ability to access some
 features using my keyboard as I can using a standard Apple keyboard.
 
 ZMK has partial support for the _Globe_ key (check issue
-[#937](https://github.com/zmkfirmware/zmk/issues/947) for details on the mater),
+[#947](https://github.com/zmkfirmware/zmk/issues/947) for details on the matter),
 it can only be used as a _“holding”_ key.
 
 ## Caps Lock & Caps Word

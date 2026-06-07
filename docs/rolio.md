@@ -35,9 +35,9 @@ Some notable features are:
   layers on different sides of the keyboard, to help my brain to identify what
   hand to use in which situation;
 - **Momentary layers**: All layers require you to keep a key pressed to use
-  them, but you can lock them in place (this requires [PR
-  #1984](https://github.com/zmkfirmware/zmk/pull/1984) to work, and it's not
-  built with GitHub actions in this repository);
+  them, but you can lock them in place via the `&molock` behavior, which
+  builds on upstream ZMK's layer-locking feature from [PR
+  #2717](https://github.com/zmkfirmware/zmk/pull/2717);
 - **Dynamic keys**: Keys morph into other keys depending on the situation and
   requirement;
 - **Timeless homerow mods**: Homerow mod configuration based on [Robert U
@@ -314,5 +314,5 @@ point, and that is the reason this layer is here, but this day is not today :).
 
 ## Disclaimers
 
-The Corne image, I used in the header of this document, is from
+The Rolio image, I used in the header of this document, is from
 [Keydio Labs](https://keydio.shop/), the vendor where I purchase my Rolio46 Kit.
