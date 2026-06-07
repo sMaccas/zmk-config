@@ -201,6 +201,49 @@
 #define P_LB4_MOU  &none
 #endif
 
+// LED-system feature flags
+// -----------------------------------------------------------------------------
+// The SYS layer carries controls for two unrelated LED subsystems: RGB
+// underglow (`&rgb_ug`) and switch backlight (`&bl`). Whether each subsystem
+// is actually wired up depends on the build's `.conf` (CONFIG_ZMK_RGB_UNDERGLOW
+// / CONFIG_ZMK_BACKLIGHT). When the subsystem isn't enabled the corresponding
+// keys still compile but do nothing — so each `.keymap` should declare which
+// systems the *board model* supports and the SYS bindings collapse the absent
+// ones to `&none`.
+//
+// Note for Corne: `USE_RGB_UNDERGLOW` is defined for the model because the
+// OLED build variant ships with `CONFIG_ZMK_RGB_UNDERGLOW=y`; the nice!view
+// build doesn't enable it and the keys are inert there.
+#if defined(USE_RGB_UNDERGLOW)
+#define RGB_HUI_KEY  &rgb_ug RGB_HUI
+#define RGB_HUD_KEY  &rgb_ug RGB_HUD
+#define RGB_SAI_KEY  &rgb_ug RGB_SAI
+#define RGB_SAD_KEY  &rgb_ug RGB_SAD
+#define RGB_BRI_KEY  &rgb_ug RGB_BRI
+#define RGB_BRD_KEY  &rgb_ug RGB_BRD
+#define RGB_TOG_KEY  &rgb_ug RGB_TOG
+#define UG_RESET_KEY &ug_reset
+#else
+#define RGB_HUI_KEY  &none
+#define RGB_HUD_KEY  &none
+#define RGB_SAI_KEY  &none
+#define RGB_SAD_KEY  &none
+#define RGB_BRI_KEY  &none
+#define RGB_BRD_KEY  &none
+#define RGB_TOG_KEY  &none
+#define UG_RESET_KEY &none
+#endif
+
+#if defined(USE_BACKLIGHT)
+#define BL_INC_KEY  &bl BL_INC
+#define BL_DEC_KEY  &bl BL_DEC
+#define BL_TOG_KEY  &bl BL_TOG
+#else
+#define BL_INC_KEY  &none
+#define BL_DEC_KEY  &none
+#define BL_TOG_KEY  &none
+#endif
+
 // Special keys behaviors
 // -----------------------------------------------------------------------------
 // Generic ZMK behaviors are defined on their own `dtsi` file, but some
@@ -637,9 +680,9 @@
       display-name = "System";
       bindings = <LAYER_ADAPTER(
         &none,       &none,           &none,           &none,           &none,      &none,                                     &none,        &none,        &none,        &none,        &none,         &none,
-        &bootloader, &rgb_ug RGB_HUI, &rgb_ug RGB_SAI, &rgb_ug RGB_BRI, &bl BL_INC, &ext_power EP_TOG, &kp LHYP,    &kp RHYP,  &none,        &none,        &none,        &none,        &none,         &bootloader,
-        &sys_reset,  &rgb_ug RGB_HUD, &rgb_ug RGB_SAD, &rgb_ug RGB_BRD, &bl BL_DEC, &out OUT_TOG,      &kp LMEH,    &kp RMEH,  &none,        &none,        &none,        &none,        &none,         &sys_reset,
-        &none,       &rgb_ug RGB_TOG, &ug_reset,       &none,           &bl BL_TOG, &kp C_PWR,         &kp HOME,    &kp PG_UP, &bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3, &bt BT_SEL 4,  &bt BT_CLR,
+        &bootloader, RGB_HUI_KEY,     RGB_SAI_KEY,     RGB_BRI_KEY,     BL_INC_KEY, &ext_power EP_TOG, &kp LHYP,    &kp RHYP,  &none,        &none,        &none,        &none,        &none,         &bootloader,
+        &sys_reset,  RGB_HUD_KEY,     RGB_SAD_KEY,     RGB_BRD_KEY,     BL_DEC_KEY, &out OUT_TOG,      &kp LMEH,    &kp RMEH,  &none,        &none,        &none,        &none,        &none,         &sys_reset,
+        &none,       RGB_TOG_KEY,     UG_RESET_KEY,    &none,           BL_TOG_KEY, &kp C_PWR,         &kp HOME,    &kp PG_UP, &bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3, &bt BT_SEL 4,  &bt BT_CLR,
                      LOCK_SYS_LAYER,  &none,           &none,           &none,      &tog L_CMK,        &kp END,     &kp PG_DN, &none,        &none,        &none,        &none,        LOCK_SYS_LAYER
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;

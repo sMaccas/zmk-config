@@ -38,6 +38,10 @@
 // for the Buttons layer (P_SF4_QWT becomes &motg_but) so we don't
 // need to steal Z and / for hold-tap.
 
+// Rolio ships with switch backlight (CONFIG_ZMK_BACKLIGHT=y in rolio.conf),
+// no RGB underglow.
+#define USE_BACKLIGHT
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 35
 

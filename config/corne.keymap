@@ -42,6 +42,11 @@
 #define USE_HOLD_TAP_LAYER_FUNCTIONS
 #define USE_HOLD_TAP_LAYER_MOUSE
 
+// The OLED build variant ships with CONFIG_ZMK_RGB_UNDERGLOW=y (see
+// corne_oled.conf). The nice!view build doesn't, but the SYS-layer RGB
+// keys are harmless no-ops there. Corne never ships with switch backlight.
+#define USE_RGB_UNDERGLOW
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 35
 
