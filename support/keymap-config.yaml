@@ -260,6 +260,10 @@ parse_config:
     C_NEXT: "$$mdi:skip-forward$$"
     C_PREVIOUS: "$$mdi:skip-backward$$"
     C_PREV: "$$mdi:skip-backward$$"
+    C_RW: "$$mdi:rewind$$"
+    C_REWIND: "$$mdi:rewind$$"
+    C_FF: "$$mdi:fast-forward$$"
+    C_FAST_FORWARD: "$$mdi:fast-forward$$"
 
     # Applications: Application Controls
     C_AC_SEARCH: "$$mdi:folder-search-outline$$"

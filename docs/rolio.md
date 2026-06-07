@@ -248,14 +248,16 @@ I do not know where it came from.
 
 This layer is where I put all my media controlling buttons.
 
-Except for media player keys, they're all aligned vertically, and go from
-increasing value on top, to toggling it off on the bottom.
-
-The media player keys are positioned so the _play/pause_ key is the key with the
-small mark of the physical key marking the start of the homerow fingers, and
-_back_ and _next_ are positioned on each side of the _play_ key.
-
-I made the usual _Escape_ key to be the _stop_, so it's easy to remember.
+- The volume column (up / down / mute) lives on the right edge of the
+  homerow, vertically aligned: increase on top, decrease in the middle,
+  mute on the bottom.
+- The brightness column (up / down) sits one column inward, same idea
+  (top is brighter, bottom is dimmer).
+- The media-player triplet (_previous_ / _play-pause_ / _next_) is
+  grouped horizontally on the homerow so all three are reachable from
+  the resting hand position.
+- _Stop_ sits directly above _play-pause_ in the same column, on the
+  row above the homerow.
 
 ## Mouse Layer
 
