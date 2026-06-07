@@ -8,7 +8,7 @@
 //
 // 1. Include the correct key positions definition from the `keypos_def`
 //    directory;
-// 2. Define a macro function called `LAYER_ADAPTER` that receives 60 arguments
+// 2. Define a macro function called `LAYER_ADAPTER` that receives 66 arguments
 //    (one per key in the layout), and replace by the keyboard's physical layout
 //    shape;
 //

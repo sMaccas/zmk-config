@@ -90,9 +90,11 @@ Two related behaviors live on combos in the base layers (see the main
 
 - **`CAPS_WORD`** — pressing both _Shift_ keys together. Capitalizes the
   next word only, then drops back to normal typing.
-- **`CAPS_LOCK`** — pressing `G + H` together. Sends the real `CAPS_LOCK`
-  HID toggle. macOS can be configured to route this to switch between
-  input languages (e.g. PL ↔ EN) instead of toggling the caps light.
+- **`CAPS_LOCK`** — pressing the two innermost homerow keys together
+  (`G + H` on QWERTY, `G + M` on COLEMAK — the combo is position-based,
+  not key-based). Sends the real `CAPS_LOCK` HID toggle. macOS can be
+  configured to route this to switch between input languages (e.g. PL
+  ↔ EN) instead of toggling the caps light.
 
 ### Autoshift
 

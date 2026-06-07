@@ -27,7 +27,7 @@
 > - **Layout deltas vs. upstream prose**: `` ` `` ↔ `⇥` swap on the base
 >   alpha row; homerow mod order is `⌘ ⌥ ^ ⇧` pinky-to-index on both
 >   hands; Numbers layer swaps `⏎` and `⇥`; Navigation and Mouse right-hand
->   bindings shifted one column inward; new G+H combo emits `CAPS_LOCK`
+>   bindings shifted one column inward; new innermost-homerow combo emits `CAPS_LOCK`
 >   (used for the macOS PL ↔ EN input-source toggle).
 
 This repository contains the ZMK user configuration for all my keyboards that
