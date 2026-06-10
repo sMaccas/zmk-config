@@ -182,8 +182,8 @@
 #elif !defined(USE_HOLD_TAP_LAYER_BUTTONS) && !defined(USE_HOLD_TAP_LAYER_MOUSE)
 #define P_LB4_QWT  &kp Z
 #define P_LB3_QWT  &kp X
-#define P_LF3_QWT  &motg_mou
-#define P_LF3_MOU  &tog L_MOU
+#define P_LF3_QWT  &motg_nav
+#define P_LF3_MOU  &none
 #define P_LB3_MOU  &none
 #define P_LB4_MOU  &none
 #elif !defined(USE_HOLD_TAP_LAYER_BUTTONS)
@@ -257,12 +257,12 @@
     // Tap: Backspace
     // Shift-tap: -
     // Double-tap: -
-    // Hold: Navigation Layer
+    // Hold: Media Layer
     // Morph: with Shift => Forward delete ('⌦')
-    bspcnav: backspace_or_del_and_layer_nav {
+    bspcmed: backspace_or_del_and_layer_med {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&hll L_NAV BSPC>, <&kp DEL>;
+      bindings = <&hlr L_MED BSPC>, <&kp DEL>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
@@ -448,7 +448,7 @@
         &kp GRAVE,  &kp Q,     &kp W,     &kp E,     &kp R,    &kp T,         &kp LHYP,    &kp RHYP,  &kp Y,         &kp U,     &kp I,     &kp O,     &kp P,      &kp MINUS,
         &kp TAB,    LHM4(A),   LHM3(S),   LHM2(D),   LHM1(F),  &kp G,         &kp LMEH,    &kp RMEH,  &kp H,         RHM1(J),   RHM2(K),   RHM3(L),   RHM4(SEMI), &kp SQT,
         &globebslh, P_LB4_QWT, P_LB3_QWT, &kp C,     AS(V),    &kp B,         &kp HOME,    &kp PG_UP, &kp N,         &kp M,     &kp COMMA, P_RB3_QWT, P_RB4_QWT,  &hmr GLOBE EQUAL,
-                    &motg_sys, P_SF4_QWT, P_LF3_QWT, &bspcnav, &lt L_SYM ESC, &kp END,     &kp PG_DN, &lt L_MED RET, &hlr L_NUM SPACE,     P_RF3_QWT, P_SF4_QWT,  &motg_sys
+                    &motg_sys, P_SF4_QWT, P_LF3_QWT, &hll L_SYM RET, &hll L_MOU ESC, &kp END,     &kp PG_DN, &bspcmed, &hlr L_NUM SPACE,     P_RF3_QWT, P_SF4_QWT,  &motg_sys
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
@@ -474,7 +474,7 @@
         &kp GRAVE,  &kp Q,     &kp W,     &kp F,     &kp P,     &kp B,         &kp LHYP,    &kp RHYP,  &kp J,         &kp L,     &kp U,     &kp Y,     &kp SEMI,  &kp MINUS,
         &kp TAB,    LHM4(A),   LHM3(R),   LHM2(S),   LHM1(T),   &kp G,         &kp LMEH,    &kp RMEH,  &kp M,         RHM1(N),   RHM2(E),   RHM3(I),   RHM4(O),   &kp SQT,
         &globebslh, P_LB4_QWT, P_LB3_QWT, &kp C,     &kp D,     &kp V,         &kp HOME,    &kp PG_UP, &kp K,         &kp H,     &kp COMMA, P_RB3_QWT, P_RB4_QWT, &hmr GLOBE EQUAL,
-                    &motg_sys, P_SF4_QWT, P_LF3_QWT, &bspcnav,  &lt L_SYM ESC, &kp END,     &kp PG_DN, &lt L_MED RET, &hlr L_NUM SPACE,     P_RF3_QWT, P_SF4_QWT, &motg_sys
+                    &motg_sys, P_SF4_QWT, P_LF3_QWT, &hll L_SYM RET,  &hll L_MOU ESC, &kp END,     &kp PG_DN, &bspcmed, &hlr L_NUM SPACE,     P_RF3_QWT, P_SF4_QWT, &motg_sys
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
@@ -500,7 +500,7 @@
         &appswtnxt, &kp LG(Q),   &kp LG(W),   &kp LG(E),   &kp LG(R),   &kp LG(T),  &kp LHYP,    &kp RHYP,  &kp HOME,     &kp PG_DN,     &kp PG_UP,     &kp END,      &none,    &none,
         &appPwinN,  LMT4(LG(A)), LMT3(LG(S)), LMT2(LG(D)), LMT1(LG(F)), NAV_LG_G,   &kp LMEH,    &kp RMEH,  &kp LEFT,     &kp DOWN,      &kp UP,        &kp RIGHT,    &none,    &none,
         &winPglobe, NAV_LG_Z,    NAV_LG_X,    NAV_LG_C,    NAV_LG_V,    &kp LG(B),  &kp HOME,    &kp PG_UP, &kp MAC_WRDP, &kp MAC_STTL,  &kp MAC_ENDL,  &kp MAC_WRDN, &none,    &none,
-                    &none,       &none,       &none,       &tog L_NAV,  &none,      &kp END,     &kp PG_DN, &none,        &none,         &none,         &none,        &molock
+                    &none,       &none,       &tog L_NAV,  &none,       &none,      &kp END,     &kp PG_DN, &none,        &none,         &none,         &none,        &molock
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
@@ -552,7 +552,7 @@
         &none,     &none,     &none,     &none,     &none,     &none,      &kp LHYP,    &kp RHYP,  &kp AMPS,  &kp LT,    &kp EQUAL, &kp GT,   &kp PIPE,  &kp HASH,
         &none,     &kp LHRM4, &kp LHRM3, &kp LHRM2, &kp LHRM1, &none,      &kp LMEH,    &kp RMEH,  &kp LBKT,  &kp LPAR,  &kp COLON, &kp RPAR, &kp RBKT,  &kp PRCNT,
         &kp GLOBE, &none,     &none,     &none,     &none,     &none,      &kp HOME,    &kp PG_UP, &kp DLLR,  &kp LBRC,  &kp STAR,  &kp RBRC, &kp CARET, &kp EXCL,
-                   &none,     &none,     &none,     &none,     &tog L_SYM, &kp END,     &kp PG_DN, &kp AT,    &kp SPACE, &none,     &none,    &molock
+                   &none,     &none,     &none,     &tog L_SYM, &none,     &kp END,     &kp PG_DN, &kp AT,    &kp SPACE, &none,     &none,    &molock
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
@@ -605,7 +605,7 @@
         &none,     &mkp MB4,  &mkp MB3,  &mkp MB2,  &mkp MB1,  &mkp MB5, &kp LHYP,    &kp RHYP,  &none,         &kp MAC_CUT,   &kp MAC_COPY,  &kp MAC_PASTE,  &kp MAC_UNDO,   &none,
         &none,     &kp LHRM4, &kp LHRM3, &kp LHRM2, &kp LHRM1, &none,    &kp LMEH,    &kp RMEH,  MKP_MOVE_LEFT, MKP_MOVE_DOWN, MKP_MOVE_UP,   MKP_MOVE_RIGHT, &none,          &none,
         &kp GLOBE, P_LB4_MOU, P_LB3_MOU, &none,     &none,     &none,    &kp HOME,    &kp PG_UP, MKP_SCRL_LEFT, MKP_SCRL_DOWN, MKP_SCRL_UP,   MKP_SCRL_RIGHT, &none,          &none,
-                   &none,     &none,     P_LF3_MOU, &none,     &none,    &kp END,     &kp PG_DN, &mkp MB2,      &mkp MB1,      &mkp MB3,      &mkp MB4,       &molock
+                   &none,     &none,     P_LF3_MOU, &none,     &tog L_MOU, &kp END,   &kp PG_DN, &mkp MB2,      &mkp MB1,      &mkp MB3,      &mkp MB4,       &molock
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };

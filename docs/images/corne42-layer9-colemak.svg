@@ -87,9 +87,6 @@
 <svg id="mdi:mouse-right-click-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-mouse-right-click-outline" viewBox="0 0 24 24"><path d="M13 9V1.07C16.94 1.56 20 4.92 20 9H13M11 9V1.07C10.3 1.16 9.63 1.33 9 1.59C6.67 2.53 4.89 4.53 4.25 7C4.09 7.64 4 8.31 4 9H11M6.34 7C6.82 5.65 7.78 4.5 9 3.81V7H6.34M6 15V13H18V15C18 16.59 17.37 18.12 16.24 19.24C15.12 20.37 13.59 21 12 21C10.41 21 8.88 20.37 7.76 19.24C6.63 18.12 6 16.59 6 15M4 15C4 17.12 4.84 19.16 6.34 20.66C7.84 22.16 9.88 23 12 23C14.12 23 16.16 22.16 17.66 20.66C19.16 19.16 20 17.12 20 15V11H4V15Z" /></svg>
 </svg>
-<svg id="mdi:numeric-1-box-multiple-outline">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-numeric-1-box-multiple-outline" viewBox="0 0 24 24"><path d="M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1M14,15H16V5H12V7H14M3,5H1V21A2,2 0 0,0 3,23H19V21H3V5Z" /></svg>
-</svg>
 <svg id="mdi:numeric-2-box-multiple-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-numeric-2-box-multiple-outline" viewBox="0 0 24 24"><path d="M17,13H13V11H15A2,2 0 0,0 17,9V7C17,5.89 16.1,5 15,5H11V7H15V9H13A2,2 0 0,0 11,11V15H17M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1M3,5H1V21A2,2 0 0,0 3,23H19V21H3V5Z" /></svg>
 </svg>
@@ -484,19 +481,19 @@ rect.ghost { fill: #7b7e81; }
 </g>
 <g transform="translate(286, 213) rotate(15.0)" class="key held keypos-37">
 <rect rx="6" ry="6" x="-24" y="-24" width="48" height="48" class="key held"/>
-<use href="#mdi:backspace" xlink:href="#mdi:backspace" x="-7" y="-7" height="14" width="14.0" class="key held tap glyph mdi:backspace"/>
-<use href="#mdi:numeric-1-box-multiple-outline" xlink:href="#mdi:numeric-1-box-multiple-outline" x="-6" y="8" height="12" width="12.0" class="key held hold glyph mdi:numeric-1-box-multiple-outline"/>
-<use href="#mdi:backspace-reverse" xlink:href="#mdi:backspace-reverse" x="-5" y="-20" height="10" width="10.0" class="key held shifted glyph mdi:backspace-reverse"/>
+<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-7" y="-7" height="14" width="14.0" class="key held tap glyph mdi:keyboard-return"/>
+<use href="#mdi:numeric-3-box-multiple-outline" xlink:href="#mdi:numeric-3-box-multiple-outline" x="-6" y="8" height="12" width="12.0" class="key held hold glyph mdi:numeric-3-box-multiple-outline"/>
 </g>
 <g transform="translate(351, 224) rotate(30.0)" class="key held keypos-38">
 <rect rx="6" ry="6" x="-24" y="-38" width="48" height="76" class="key held"/>
 <text x="0" y="0" class="key held tap">⎋</text>
-<use href="#mdi:numeric-3-box-multiple-outline" xlink:href="#mdi:numeric-3-box-multiple-outline" x="-6" y="22" height="12" width="12.0" class="key held hold glyph mdi:numeric-3-box-multiple-outline"/>
+<use href="#mdi:numeric-5-box-multiple-outline" xlink:href="#mdi:numeric-5-box-multiple-outline" x="-6" y="22" height="12" width="12.0" class="key held hold glyph mdi:numeric-5-box-multiple-outline"/>
 </g>
 <g transform="translate(489, 224) rotate(-30.0)" class="key held keypos-39">
 <rect rx="6" ry="6" x="-24" y="-38" width="48" height="76" class="key held"/>
-<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-7" y="-7" height="14" width="14.0" class="key held tap glyph mdi:keyboard-return"/>
+<use href="#mdi:backspace" xlink:href="#mdi:backspace" x="-7" y="-7" height="14" width="14.0" class="key held tap glyph mdi:backspace"/>
 <use href="#mdi:numeric-4-box-multiple-outline" xlink:href="#mdi:numeric-4-box-multiple-outline" x="-6" y="22" height="12" width="12.0" class="key held hold glyph mdi:numeric-4-box-multiple-outline"/>
+<use href="#mdi:backspace-reverse" xlink:href="#mdi:backspace-reverse" x="-5" y="-34" height="10" width="10.0" class="key held shifted glyph mdi:backspace-reverse"/>
 </g>
 <g transform="translate(554, 213) rotate(-15.0)" class="key held keypos-40">
 <rect rx="6" ry="6" x="-24" y="-24" width="48" height="48" class="key held"/>

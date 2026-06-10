@@ -286,12 +286,12 @@ parse_config:
     # Layer activation keys
     # These are all located in my base layers (QWERTY and COLEMAK)
     #---------------------------------------------------------------------------
-    # Navigation layer
-    "&bspcnav":
+    # Media layer (hold) + Backspace (tap), Shift-tap -> Delete
+    "&bspcmed":
       {
         t: "$$mdi:backspace$$",
         s: "$$mdi:backspace-reverse$$",
-        h: "$$mdi:numeric-1-box-multiple-outline$$",
+        h: "$$mdi:numeric-4-box-multiple-outline$$",
         type: "held",
       }
     # Number layer
@@ -301,17 +301,19 @@ parse_config:
         h: "$$mdi:numeric-2-box-multiple-outline$$",
         type: "held",
       }
+    # Mouse layer (hold) + Esc (tap)
+    "&hll L_MOU ESC":
+      { t: "⎋", h: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
     # Symbols layer
-    "&lt L_SYM ESC":
-      { t: "⎋", h: "$$mdi:numeric-3-box-multiple-outline$$", type: "held" }
-    # Media layer
-    "&lt L_MED RET":
+    "&hll L_SYM RET":
       {
         t: "$$mdi:keyboard-return$$",
-        h: "$$mdi:numeric-4-box-multiple-outline$$",
+        h: "$$mdi:numeric-3-box-multiple-outline$$",
         type: "held",
       }
-    # Buttons layer
+    # Navigation layer
+    "&motg_nav": { t: "$$mdi:numeric-1-box-multiple-outline$$", type: "held" }
+    # Mouse layer (alt tap-dance, kept for configurations that still use it)
     "&motg_mou": { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
     "&hll L_MOU Z": { t: "Z", h: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
     "&hll L_MOU X": { t: "X", h: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }

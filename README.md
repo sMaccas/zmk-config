@@ -29,6 +29,14 @@
 >   hands; Numbers layer swaps `⏎` and `⇥`; Navigation and Mouse right-hand
 >   bindings shifted one column inward; new innermost-homerow combo emits `CAPS_LOCK`
 >   (used for the macOS PL ↔ EN input-source toggle).
+> - **Base-layer thumb cluster reshuffled.** Enter and Backspace are on
+>   opposite hands (Enter on the left thumb, Backspace on the right
+>   thumb with the Shift → ⌦ morph following it). The Symbols hold
+>   moved off the innermost left thumb onto the position next to it,
+>   so a sustained hold no longer needs the thumb to curl all the way
+>   inward. Mouse and Navigation activation swapped within the left
+>   thumb — Navigation via a tap-dance at the middle-left thumb, Mouse
+>   via a hold-tap on the innermost left thumb (Esc is the tap face).
 
 This repository contains the ZMK user configuration for all my keyboards that
 use the [ZMK](https://zmk.dev/) firmware.
