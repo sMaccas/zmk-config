@@ -1,5 +1,9 @@
 if(CONFIG_ZMK_DISPLAY AND CONFIG_VISTA508_WIDGET_STATUS)
   zephyr_library_include_directories(${CMAKE_SOURCE_DIR}/include)
+  # Repo-root include/ exposes per-project headers (e.g. diag/reset_reason.h)
+  # to widget code; the ZMK app's ${CMAKE_SOURCE_DIR}/include line above only
+  # covers the ZMK tree, not this module.
+  zephyr_library_include_directories(${CMAKE_CURRENT_LIST_DIR}/../../../include)
   zephyr_library_sources(custom_status_screen.c)
   zephyr_library_sources(widgets/bolt.c)
   zephyr_library_sources(widgets/util.c)

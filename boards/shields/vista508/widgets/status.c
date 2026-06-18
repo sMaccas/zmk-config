@@ -276,31 +276,26 @@ static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
     lv_draw_rect_dsc_t rect_black_dsc;
     init_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND);
     lv_draw_label_dsc_t label_dsc;
-    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
-    lv_draw_label_dsc_t label_dsc_small;
-    init_label_dsc(&label_dsc_small, LVGL_FOREGROUND, &lv_font_montserrat_12, LV_TEXT_ALIGN_CENTER);
+    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_16, LV_TEXT_ALIGN_CENTER);
 
     // Fill background
     canvas_draw_rect(canvas, 0, 0, CANVAS_SIZE, CANVAS_SIZE, &rect_black_dsc);
 
-    // Draw layer
-    if (state->layer_label == NULL) {
-        char text[10] = {};
-
-        snprintf(text, sizeof(text), "LAYER %i", state->layer_index);
-
-        canvas_draw_text(canvas, 0, 5, CANVAS_SIZE, &label_dsc, text);
-    } else {
-        canvas_draw_text(canvas, 0, 5, CANVAS_SIZE, &label_dsc, state->layer_label);
+    // The 144x144 bottom canvas is aligned at widget y=142 on a 144x168
+    // display, so only canvas rows 0..25 are physically lit. The combined
+    // "<layer> B<n>F<n>" string lives on a single 16pt baseline at y=5 so
+    // it stays fully on-screen; a separate counter line below would fall
+    // off the bottom edge.
+    char text[24] = {};
+    const char *layer_name = state->layer_label;
+    char fallback_name[12];
+    if (layer_name == NULL) {
+        snprintf(fallback_name, sizeof(fallback_name), "LAYER %i", state->layer_index);
+        layer_name = fallback_name;
     }
-
-    // Draw boot / fatal-reset counters underneath the layer label so any
-    // silent recovery from a hang shows up as F: incrementing between
-    // glances at the keyboard.
-    char counter_text[16] = {};
-    snprintf(counter_text, sizeof(counter_text), "B:%u F:%u",
+    snprintf(text, sizeof(text), "%s B%uF%u", layer_name,
              reset_reason_boot_count(), reset_reason_fatal_count());
-    canvas_draw_text(canvas, 0, 26, CANVAS_SIZE, &label_dsc_small, counter_text);
+    canvas_draw_text(canvas, 0, 5, CANVAS_SIZE, &label_dsc, text);
 }
 
 static void set_battery_status(struct zmk_widget_status *widget,
