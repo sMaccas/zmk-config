@@ -22,9 +22,12 @@
 
 #include <zephyr/init.h>
 #include <zephyr/kernel.h>
+#include <zephyr/logging/log.h>
 #include <zephyr/settings/settings.h>
 
 #include <hal/nrf_power.h>
+
+LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #define SETTINGS_TREE "diag"
 
@@ -74,11 +77,17 @@ SETTINGS_STATIC_HANDLER_DEFINE(diag_rr, SETTINGS_TREE, NULL, settings_set_cb, NU
 // if ZMK already initialised it earlier in the boot sequence.
 static int reset_reason_finalize(void)
 {
-    int rc = settings_subsys_init();
-    const bool storage_ready = (rc == 0 || rc == -EALREADY);
+    const int rc_init = settings_subsys_init();
+    const bool storage_ready = (rc_init == 0 || rc_init == -EALREADY);
 
+    LOG_INF("diag/rr: subsys_init=%d storage_ready=%d resetreas=0x%08x",
+            rc_init, (int)storage_ready, captured_reasons);
+
+    int rc_load = 0;
     if (storage_ready) {
-        settings_load_subtree(SETTINGS_TREE);
+        rc_load = settings_load_subtree(SETTINGS_TREE);
+        LOG_INF("diag/rr: load_subtree=%d -> boots=%u fatals=%u",
+                rc_load, boots, fatals);
     }
 
     if (boots < UINT8_MAX) {
@@ -88,9 +97,14 @@ static int reset_reason_finalize(void)
         fatals++;
     }
 
+    LOG_INF("diag/rr: after increment boots=%u fatals=%u", boots, fatals);
+
     if (storage_ready) {
-        settings_save_one(SETTINGS_TREE "/b", &boots, sizeof(boots));
-        settings_save_one(SETTINGS_TREE "/f", &fatals, sizeof(fatals));
+        const int rc_b = settings_save_one(SETTINGS_TREE "/b",
+                                           &boots, sizeof(boots));
+        const int rc_f = settings_save_one(SETTINGS_TREE "/f",
+                                           &fatals, sizeof(fatals));
+        LOG_INF("diag/rr: save b=%d f=%d", rc_b, rc_f);
     }
 
     return 0;
