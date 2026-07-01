@@ -610,6 +610,12 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     // The art zone is never touched by any listener; draw it once here
     // and it stays put for the lifetime of the widget.
     draw_art(top);
+    // The mods listener's initial-state callback early-returns because
+    // widget->state.mods and the freshly-fetched value are both zero on
+    // boot, so nothing has painted the mods zone yet. Draw the empty
+    // outlines explicitly so the strip is not left in canvas-default
+    // (blank background) state until the first modifier press.
+    draw_mods(top, &widget->state);
 #endif
 
     return 0;
