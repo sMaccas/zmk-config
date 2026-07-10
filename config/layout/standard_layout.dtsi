@@ -37,24 +37,22 @@
 
 // Current main layout: QWERTY
 #define L_QWT 0
-// Alternative layout I'm planning to explore: COLEMAK
-#define L_CMK 1
 // Navigation layer
-#define L_NAV 2
+#define L_NAV 1
 // Numbers layer
-#define L_NUM 3
+#define L_NUM 2
 // Symbols layer
-#define L_SYM 4
+#define L_SYM 3
 // Media layer
-#define L_MED 5
+#define L_MED 4
 // Mouse layer
-#define L_MOU 6
+#define L_MOU 5
 // Functions layer
-#define L_FUN 7
+#define L_FUN 6
 // Buttons layer
-#define L_BUT 8
+#define L_BUT 7
 // Keyboard system layer
-#define L_SYS 9
+#define L_SYS 8
 
 // Behavior configuration
 // -----------------------------------------------------------------------------
