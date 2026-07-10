@@ -106,7 +106,7 @@
 // activation of the "Buttons" layer. Notice that COLEMAK and QWERTY share the
 // same keys on the positions chosen for the activation key.
 #if defined(USE_HOLD_TAP_LAYER_BUTTONS)
-#define P_LB4_QWT  &hll L_BUT Z
+#define P_LB4_QWT  &hll L_NAV Z
 #define P_RB4_QWT  &hlr L_BUT FSLH
 #define P_SF4_QWT  &none
 #define P_SF4_BUT  &none
@@ -434,9 +434,9 @@
     // ├───────╆━━━━━━━╈━━━━━━━╈━━━━━━━╈━━━━━━━╈━━━━━━━┪ ┌───────╮  ╭───────┐ ┢━━━━━━━╈━━━━━━━╈━━━━━━━╈━━━━━━━╈━━━━━━━╅───────┤
     // │  ESC  ┃   Q   ┃   W   ┃   E   ┃   R   ┃   T   ┃ │       │  │       │ ┃   Y   ┃   U   ┃   I   ┃   O   ┃   P   ┃Bck┊Med│
     // ├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫ ├───────┤  ├───────┤ ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
-    // │  TAB  ┃ A ┊ 󰘳 ┃ S ┊ 󰘵 ┃ D ┊ 󰘴 ┃ F ┊ 󰘶 ┃   G   ┃ │       │  │       │ ┃   H   ┃ J ┊ 󰘶 ┃ K ┊ 󰘴 ┃ L ┊ 󰘵 ┃ ; ┊ 󰘳 ┃   '   │
+    // │  CAPS ┃ A ┊ 󰘳 ┃ S ┊ 󰘵 ┃ D ┊ 󰘴 ┃ F ┊ 󰘶 ┃   G   ┃ │       │  │       │ ┃   H   ┃ J ┊ 󰘶 ┃ K ┊ 󰘴 ┃ L ┊ 󰘵 ┃ ; ┊ 󰘳 ┃   '   │
     // ├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫ ├───────┤  ├───────┤ ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
-    // │ \ ┊  ┃ Z┊SYS ┃ X┊FUN ┃   C   ┃   V   ┃   B   ┃ │       │  │       │ ┃   N   ┃   M   ┃   ,   ┃   .   ┃   /   ┃ = ┊  │
+    // │  COPY ┃ Z┊NAV ┃ X┊MOU ┃ C|COP?┃ V|PST?┃   B   ┃ │       │  │       │ ┃   N   ┃   M   ┃   ,   ┃   .   ┃   /   ┃ SYS  │
     // ╰───────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛ ├───────┤  ├───────┤ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┹───────╯
     //         ┌───────┬───────┬───────┬───────┬───────┐ │       │  │       │ ┌───────┬───────┬───────┬───────┬───────┐
     //         │  LHYP │   󰎷   │   󰎯   │ SYM┊  │ M ┊TAB│ └───────╯  ╰───────┘ │ ⏎ ┊ 󰎲 │   ┊NUM│   󰎴   │   󰎷   │Bck┊Med│
@@ -446,8 +446,8 @@
       bindings = <LAYER_ADAPTER(
         &none, &none,   &None,   &none,   &none,  &none,                                              &none,         &none,     &none,     &none,     &none,      &none,
         &kp ESC,  &kp Q,     &kp W,     &kp E,     &kp R,    &kp T,           &none,    &none,  &kp Y,         &kp U,     &kp I,     &kp O,     &kp P,      &bspcmed,
-        &kp TAB,    LHM4(A),   LHM3(S),   LHM2(D),   LHM1(F),  &kp G,         &none,    &none,  &kp H,         RHM1(J),   RHM2(K),   RHM3(L),   RHM4(SEMI), &kp SQT,
-        &globebslh, P_LB4_QWT, P_LB3_QWT, &kp C,     AS(V),    &kp B,         &none,    &none,  &kp N,         &kp M,     &kp COMMA, P_RB3_QWT, P_RB4_QWT,  &hmr GLOBE EQUAL,
+        &caps_word,    LHM4(A),   LHM3(S),   LHM2(D),   LHM1(F),  &kp G,         &none,    &none,  &kp H,         RHM1(J),   RHM2(K),   RHM3(L),   RHM4(SEMI), &kp SQT,
+        &kp MAC_COPY, P_LB4_QWT, P_LB3_QWT, &kp C,     AS(V),    &kp B,         &none,    &none,  &kp N,         &kp M,     &kp COMMA, P_RB3_QWT, P_RB4_QWT,  &motg_sys,
      &hll L_NAV LHYP, P_SF4_QWT, P_LF3_QWT, &hll L_SYM SPACE, &hll L_MOU TAB, &none,    &none,  &kp RET, &hlr L_NUM SPACE,     P_RF3_QWT, P_SF4_QWT,  &bspcmed
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -550,9 +550,9 @@
       display-name = "Media";
       bindings = <LAYER_ADAPTER(
         &none, &none,        &none,      &none,      &none,        &none,                                &none,      &none,     &none,     &none,     &none,     &none,
-        &none, &bri_up,      &none,      &kp C_STOP, &none,        &kp C_VOL_UP, &kp LHYP,    &kp RHYP,  &none,      &none,     &none,     &none,     &none,     &none,
-        &none, &bri_dn,      &kp C_PREV, &kp C_PP,   &kp C_NEXT,   &kp C_VOL_DN, &kp LMEH,    &kp RMEH,  &none,      &kp RHRM1, &kp RHRM2, &kp RHRM3, &kp RHRM4, &none,
-        &none, &none,        &none,      &none,      &none,        &kp C_MUTE,   &kp HOME,    &kp PG_UP, &none,      &none,     &none,     &none,     &none,     &kp GLOBE,
+        &kp C_VOL_UP, &bri_up,      &none,      &kp C_STOP, &none,        &kp C_VOL_UP, &kp LHYP,    &kp RHYP,  &none,      &none,     &none,     &none,     &none,     &none,
+        &kp C_VOL_DN, &bri_dn,      &kp C_PREV, &kp C_PP,   &kp C_NEXT,   &kp C_VOL_DN, &kp LMEH,    &kp RMEH,  &none,      &kp RHRM1, &kp RHRM2, &kp RHRM3, &kp RHRM4, &none,
+        &kp C_MUTE,   &none,        &none,      &none,      &none,        &kp C_MUTE,   &kp HOME,    &kp PG_UP, &none,      &none,     &none,     &none,     &none,     &kp GLOBE,
                &molock,      &none,      &none,      &none,        &none,        &kp END,     &kp PG_DN, &tog L_MED, &none,     &none,     &none,     &none
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;
