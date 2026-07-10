@@ -447,8 +447,8 @@
         &none,    &none,     &none,     &none,     &none,    &none,                        &none, &none,     &none,     &none,     &none,      &none,
         &kp ESC,  &kp Q,     &kp W,     &kp E,     &kp R,    &kp T,      &none,    &none,  &kp Y, &kp U,     &kp I,     &kp O,     &kp P,      &bspcmed,
         &caps_word,    LHM4(A),   LHM3(S),   LHM2(D),   LHM1(F),  &kp G, &none,    &none,  &kp H, RHM1(J),   RHM2(K),   RHM3(L),   RHM4(SEMI), &kp SQT,
-        &motg_sys, P_LB4_QWT, P_LB3_QWT, &kp C, &kp V,    &kp B,      &none,    &none,  &kp N, &kp M,     &kp COMMA, P_RB3_QWT, P_RB4_QWT,  &motg_sys,
-                             &kp LHYP, &none, &none, &kp SPACE, &kp TAB, &none,    &none,  &kp RET, &hlr L_NUM SPACE, &none, &none, &bspcmed
+        &motg_nav, P_LB4_QWT, P_LB3_QWT, &kp C, &kp V,    &kp B,      &none,    &none,  &kp N, &kp M,     &kp COMMA, P_RB3_QWT, P_RB4_QWT,  &motg_sys,
+                             &hlr LHYP ESC, &none, &none, &kp SPACE, &kp TAB, &none,    &none,  &kp RET, &hlr L_NUM SPACE, &none, &none, &bspcmed
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
