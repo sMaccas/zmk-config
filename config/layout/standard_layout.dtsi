@@ -50,7 +50,7 @@
 // Functions layer
 #define L_FUN 6
 // Buttons layer
-#define L_BUT 7
+#define L_BUT 9
 // Keyboard system layer
 #define L_SYS 8
 
