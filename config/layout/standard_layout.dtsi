@@ -448,7 +448,7 @@
         &kp ESC,  &kp Q,     &kp W,     &kp E,     &kp R,    &kp T,           &none,    &none,  &kp Y,         &kp U,     &kp I,     &kp O,     &kp P,      &bspcmed,
         &caps_word,    LHM4(A),   LHM3(S),   LHM2(D),   LHM1(F),  &kp G,         &none,    &none,  &kp H,         RHM1(J),   RHM2(K),   RHM3(L),   RHM4(SEMI), &kp SQT,
         &kp MAC_COPY, P_LB4_QWT, P_LB3_QWT, &kp C,     AS(V),    &kp B,         &none,    &none,  &kp N,         &kp M,     &kp COMMA, P_RB3_QWT, P_RB4_QWT,  &motg_sys,
-     &hll L_NAV LHYP, P_SF4_QWT, P_LF3_QWT, &hll L_SYM SPACE, &hll L_MOU TAB, &none,    &none,  &kp RET, &hlr L_NUM SPACE,     P_RF3_QWT, P_SF4_QWT,  &bspcmed
+     &hll L_NAV LHYP, &kp Y, &kp U, &hll L_SYM SPACE, &hll L_MOU TAB, &none,    &none,  &kp RET, &hll L_NUM SPACE,     P_RF3_QWT, P_SF4_QWT,  &bspcmed
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
