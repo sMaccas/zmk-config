@@ -45,16 +45,3 @@ include:
     shield: settings_reset
     artifact-name: zmk-corne-42-niceview-settings-reset
 
-  # Rolio46.2
-  - keyboard: Rolio46.2 Vista508
-    board: nice_nano//zmk
-    shield: rolio_left vista508
-    artifact-name: zmk-rolio-46-left
-  - keyboard: Rolio46.2 Vista508
-    board: nice_nano//zmk
-    shield: rolio_right vista508
-    artifact-name: zmk-rolio-46-right
-  - keyboard: Rolio46.2 Vista508
-    board: nice_nano//zmk
-    shield: settings_reset
-    artifact-name: zmk-rolio-46-settings-reset
